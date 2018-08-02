@@ -8,7 +8,7 @@ def main():
     for i in str_inp:
         if i in ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'):
             cnt_inp += 1
-    print("Number of vowels: " + str(cnt_inp))
+    print(str(cnt_inp))
 
 if __name__ == "__main__":
     main()

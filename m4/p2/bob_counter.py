@@ -1,14 +1,14 @@
-'''Assume s is a string of lower case characters.
-
-Write a program that prints the number of times the string 'bob' occurs in s. For example, if s = 'azcbobobegghakl', then your program should print
-
-Number of times bob occurs is: 2'''
-
+"""A program that prints the number of times the
+string 'bob' occurs in s"""
+    
 def main():
-	s = raw_input()
-	# the input string is in s
-	# remove pass and start your code here
-	pass
+    """ This is the code for M4-A2"""
+    str_inp = input()
+    cnt_inp = 0
+    for ind_inp in range(len(str_inp)-1):
+        if len(str_inp[ind_inp:ind_inp+3]) == 3 and str_inp[ind_inp:ind_inp+3] in 'bob':
+            cnt_inp += 1
+    print('Number of times bob occurs is: ' + str(cnt_inp))
 
-if __name__== "__main__":
-	main()
+if __name__ == "__main__":
+    main()
