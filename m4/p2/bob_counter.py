@@ -7,7 +7,7 @@ def main():
     for ind_inp in range(len(str_inp)-1):
         if len(str_inp[ind_inp:ind_inp+3]) == 3 and str_inp[ind_inp:ind_inp+3] in 'bob':
             cnt_inp += 1
-    print('Number of times bob occurs is: ' + str(cnt_inp))
+    print(str(cnt_inp))
 
 if __name__ == "__main__":
     main()
