@@ -1,6 +1,5 @@
 """A program that prints the number of times the
 string 'bob' occurs in s"""
-    
 def main():
     """ This is the code for M4-A2"""
     str_inp = input()
