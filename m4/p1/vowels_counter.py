@@ -3,7 +3,7 @@ contained in the string s"""
 
 def main():
     """ This is the code for M4-A1"""
-    str_inp = raw_input()
+    str_inp = input()
     cnt_inp = 0
     for i in str_inp:
         if i in ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'):
