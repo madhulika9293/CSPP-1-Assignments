@@ -15,6 +15,6 @@ def main():
             high_inp = sq_root
         sq_root = (high_inp + low_inp)/2.0
     if abs(sq_root**2 - str_inp) <= epsilon:
-        print(str(sq_root))
+        print(sq_root)
 if __name__ == "__main__":
     main()
