@@ -3,7 +3,7 @@ number using approximation method"""
 
 def main():
     """This is the code for M5-A3"""
-    str_inp = float(input())
+    str_inp = input()
     epsilon = 0.01
     low_inp = 1.0
     high_inp = str_inp
