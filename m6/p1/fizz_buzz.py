@@ -10,12 +10,10 @@ def main():
     '''
     num = int(input())
     for loop_var in range(1, num+1):
-        if loop_var%3 == 0 and loop_var%5 != 0:
+        if loop_var%3 == 0:
             print("Fizz")
-        elif loop_var%3 != 0 and loop_var%5 == 0:
+        if loop_var%5 == 0:
             print("Buzz")
-        elif loop_var%3 == 0 and loop_var%5 == 0:
-            print("FizzBuzz")
         else:
             print(str(loop_var))
 
