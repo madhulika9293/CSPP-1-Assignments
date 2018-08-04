@@ -14,7 +14,7 @@ def main():
             print("Fizz")
         if loop_var%5 == 0:
             print("Buzz")
-        else:
+        if loop_var%3 != 0 and loop_var%5 != 0:
             print(str(loop_var))
 
 if __name__ == "__main__":
