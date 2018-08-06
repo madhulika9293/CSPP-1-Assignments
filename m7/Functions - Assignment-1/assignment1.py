@@ -44,7 +44,7 @@ def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
        i += 1
 
     return(round(bal_due, 2))
-    print(bal_due)
+    print(float(bal_due))
     
     
 
