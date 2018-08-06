@@ -3,7 +3,7 @@ A program to calculate the credit card balance after one year
 if a person only pays the minimum monthly payment required
 by the credit card company each month.
 """
-def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
+def payingdebtoff_inayear(balance, annualInterestRate, monthlyPaymentRate):
     original_bal = balance
     def pay_made(x):
         return x*monthlyPaymentRate
@@ -25,7 +25,7 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Remaining balance: " + str(payingDebtOffInAYear(data[0],data[1],data[2])))
+    print("Remaining balance: " + str(payingdebtoff_inayear(data[0], data[1], data[2])))
 
 if __name__ == "__main__":
     main()
