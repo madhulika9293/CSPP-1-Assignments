@@ -7,19 +7,19 @@ def payingdebtoff_inayear(balance, annual_interestrate):
     """
     A function to calculate the lowest payment
     """
-    original_bal = balance
-    def bal_mon(num_inp):
-        return num_inp + num_inp*(annual_interestrate/12)
-    bal_due = original_bal
-    pay_made = 10
+    payment = 0
+    bal_due = balance
     while bal_due > 0:
-        for loop_var in range(1, 13):
-            payment = pay_made
+        payment += 10
+        bal_due = balance
+        # print(payment)
+        for loop_var in range(1,13):
             unpaid_bal = bal_due - payment
-            bal_due = bal_mon(unpaid_bal)
-            loop_var == loop_var
-        pay_made += 10
-    return pay_made
+            # print(loop_var, unpaid_bal)
+            bal_due = unpaid_bal*(1 + (annual_interestrate/12.0))
+        # print(year_count,bal_due)
+        # year_count += 1
+    return payment
 
 def main():
     """
