@@ -17,7 +17,7 @@ def payingdebtoff_inayear(balance, annual_interestrate):
             payment = pay_made
             unpaid_bal = bal_due - payment
             bal_due = bal_mon(unpaid_bal)
-            loop var == loop_var
+            loop_var == loop_var
         pay_made += 10
     return pay_made
 
