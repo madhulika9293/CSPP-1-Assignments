@@ -3,13 +3,16 @@ A program to calculate the credit card balance after one year
 if a person only pays the minimum monthly payment required
 by the credit card company each month.
 """
-def payingdebtoff_inayear(balance, annualInterestRate, monthlyPaymentRate):
+def payingdebtoff_inayear(balance, annual_interestrate, monthly_paymentrate):
+    """
+    Function to calculate balance after an year
+    """
     original_bal = balance
-    def pay_made(x):
-        return x*monthlyPaymentRate
+    def pay_made(num_inp):
+        return num_inp*monthly_paymentrate
 
-    def bal_mon(x):
-        return x + x*(annualInterestRate/12)
+    def bal_mon(num_inp):
+        return num_inp + num_inp*(annual_interestrate/12)
 
     i = 1
     bal_due = original_bal
@@ -19,9 +22,11 @@ def payingdebtoff_inayear(balance, annualInterestRate, monthlyPaymentRate):
         bal_due = bal_mon(unpaid_bal)
         # print(round(bal_due, 2))
         i += 1
-
     return round(bal_due, 2)
 def main():
+    """
+    Function to check test cases
+    """
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
