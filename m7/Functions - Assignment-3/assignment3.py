@@ -11,7 +11,7 @@ def payingdebt_offinayear(balance, annual_interestrate):
     def bal_d(balance, pay, annual_interestrate):
         """
         A function to calculate balance
-        """    
+        """
         b_d = balance
         for _ in range(1, 13):
             u_bal = b_d - pay
@@ -36,11 +36,13 @@ def payingdebt_offinayear(balance, annual_interestrate):
     # if bal_d(balance, payment, annual_interestrate) <= epsilon:
 
 def main():
+    """
+    A function for output
+    """
     data = input()
     # data = "4773 0.2"
     data = data.split(' ')
     data = list(map(float, data))
     print("Lowest Payment: " + str(payingdebt_offinayear(data[0], data[1])))
-    
 if __name__ == "__main__":
     main()
