@@ -40,7 +40,7 @@ def main():
     # data = "4773 0.2"
     data = data.split(' ')
     data = list(map(float, data))
-    print("Lowest balance is: " + str(payingdebt_offinayear(data[0], data[1])))
+    print("Lowest Payment: " + str(payingdebt_offinayear(data[0], data[1])))
     
 if __name__ == "__main__":
     main()
