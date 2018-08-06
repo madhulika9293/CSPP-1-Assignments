@@ -13,9 +13,9 @@ def payingdebtoff_inayear(balance, annual_interestrate):
         payment += 10
         bal_due = balance
         # print(payment)
-        for loop_var in range(1,13):
+        for _ in range(1, 13):
             unpaid_bal = bal_due - payment
-            # print(loop_var, unpaid_bal)
+            # print(_, unpaid_bal)
             bal_due = unpaid_bal*(1 + (annual_interestrate/12.0))
         # print(year_count,bal_due)
         # year_count += 1
