@@ -20,10 +20,7 @@ def main():
         while int_input > 0:
             prod_out = prod_out*(int_input%10)
             int_input = int_input//10
-        if nf_flag == 0:
-            print(str(prod_out))
-        elif nf_flag == -1:
-            print(str(prod_out*nf_flag))
+        print(prod_out*nf_flag)
 
 if __name__ == "__main__":
     main()
