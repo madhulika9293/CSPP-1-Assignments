@@ -9,16 +9,18 @@ def payingdebt_offinayear(balance, annual_interestrate):
     A function to calculate the lowest payment
     """
     def bal_d(balance, pay, annual_interestrate):
+        """
+        A function to calculate balance
+        """    
         b_d = balance
         for _ in range(1, 13):
-                u_bal = b_d - pay
-                b_d = u_bal*(1 + (annual_interestrate/12.0))
+            u_bal = b_d - pay
+            b_d = u_bal*(1 + (annual_interestrate/12.0))
         return b_d
 
     payment_low = balance/12.0
     monthly_interestrate = annual_interestrate/12.0
     payment_high = (balance*((1 + monthly_interestrate)**12))/12.0
-    bal_due = balance
     payment = (payment_high + payment_low)/2.0
     epsilon = 0.05
 
@@ -32,8 +34,6 @@ def payingdebt_offinayear(balance, annual_interestrate):
             return round(payment, 2)
         payment = (payment_high + payment_low)/2.0
     # if bal_d(balance, payment, annual_interestrate) <= epsilon:
-    
-        
 
 def main():
     data = input()
