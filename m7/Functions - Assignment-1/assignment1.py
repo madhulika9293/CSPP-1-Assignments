@@ -1,5 +1,5 @@
 """
-A program to calculate the credit card balance after one year 
+A program to calculate the credit card balance after one year
 if a person only pays the minimum monthly payment required
 by the credit card company each month.
 """
@@ -14,14 +14,13 @@ def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
     i = 1
     bal_due = original_bal
     while i <= 12:
-        payment = pay_made(bal_due) 
+        payment = pay_made(bal_due)
         unpaid_bal = bal_due - payment
         bal_due = bal_mon(unpaid_bal)
         # print(round(bal_due, 2))
         i += 1
 
-    return(round(bal_due, 2))
-    
+    return round(bal_due, 2)
 def main():
     data = input()
     data = data.split(' ')
