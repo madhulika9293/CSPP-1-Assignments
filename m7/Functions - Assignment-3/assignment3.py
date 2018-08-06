@@ -29,7 +29,7 @@ def payingdebt_offinayear(balance, annual_interestrate):
         elif bal_d(balance, payment, annual_interestrate) < -epsilon:
             payment_high = payment
         else:
-            return round(payment, 3)
+            return round(payment, 2)
         payment = (payment_high + payment_low)/2.0
     # if bal_d(balance, payment, annual_interestrate) <= epsilon:
     
