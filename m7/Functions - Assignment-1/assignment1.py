@@ -21,13 +21,12 @@ def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
         i += 1
 
     return(round(bal_due, 2))
-    print("Remaining balance: " + str(bal_due))
     
 def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print(payingDebtOffInAYear(data[0],data[1],data[2]))
+    print(+ "Remaining balance: " + payingDebtOffInAYear(data[0],data[1],data[2]))
 
 if __name__== "__main__":
     main()
