@@ -10,7 +10,7 @@ def factorial(n):
 
     returns: a positive integer, the factorial of n.
     '''
-    if n == 1:
+    if n <= 1:
         return 1
     return n*factorial(n-1)
 
