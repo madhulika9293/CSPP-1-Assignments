@@ -18,7 +18,6 @@ def main():
     this is the main function
     '''
     num_op = input()
-    print(sumofdigits(int(num_op)))  
-
+    print(sumofdigits(int(num_op)))
 if __name__ == "__main__":
     main()
