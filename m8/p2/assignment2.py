@@ -4,24 +4,21 @@ returns the sum of digits
 of given number.
 '''
 
-def sumofdigits(n):
+def sumofdigits(n_inp):
     '''
-    n is positive Integer
+    n_inp is positive Integer
 
-    returns: a positive integer, the sum of digits of n.
+    returns: a positive integer, the sum of digits of n_inp.
     '''
-    if n == 0:
+    if n_inp == 0:
         return 0
-    return n%10 + sumofdigits(n//10)
-         
-
+    return n_inp%10 + sumofdigits(n_inp//10)
 def main():
     '''
     this is the main function
     '''
-    a = input()
-    print(sumofdigits(int(a)))  
+    num_op = input()
+    print(sumofdigits(int(num_op)))  
 
 if __name__ == "__main__":
     main()
-
