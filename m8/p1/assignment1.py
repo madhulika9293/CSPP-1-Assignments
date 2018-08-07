@@ -18,7 +18,7 @@ def main():
     Main function to upon the declared function
     '''
     num_out = int(input())
-    print(factorial(int(num_out)))    
+    print(factorial(int(num_out)))   
 
 if __name__ == "__main__":
     main()
