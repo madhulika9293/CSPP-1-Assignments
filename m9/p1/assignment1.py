@@ -15,13 +15,10 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-    let_guess_string = ''.join(letters_guessed)
-    if len(let_guess_string) > 8:
-        return False
-    elif let_guess_string in secret_word:
-        return True
-    else:
-        return False
+    for char in secret_word:
+        if char not in letters_guessed:
+            return False
+    return True
 
 def main():
     '''
