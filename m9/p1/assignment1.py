@@ -16,6 +16,9 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     let_guess_string = ''.join(letters_guessed)
+    if len(let_guess_string) > 8:
+        break
+        return False
     if let_guess_string in secret_word:
         return True
     return False
