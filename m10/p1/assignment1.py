@@ -17,7 +17,7 @@ def get_available_letters(letters_guessed):
     for char in letters_guessed:
         if char in letters_guessed:
             alphabets = alphabets.replace(char, "")
-    return(alphabets)
+    return alphabets
 
 
 def main():
