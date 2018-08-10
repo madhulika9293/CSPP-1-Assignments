@@ -18,16 +18,14 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    if word in wordList:
-        hand_char = hand.keys()
-        for char in word:
-            if char in hand_char:
-                pass
-            else:
-                return False
-                break
+    count = 0
+    for char in word:
+        if char in hand:
+            count += 1
+    if count == len(hand):
+        if word in wordList:
             return True
-
+        return False
 
 def main():
     word=input()
