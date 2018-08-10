@@ -1,8 +1,10 @@
-#Exercise: Assignment-2
-#Implement the updateHand function. Make sure this function has
-# no side effects: i.e., it must not mutate the hand passed in.
-# Before pasting your function definition here, be sure you've passed
-# the appropriate tests in test_ps4a.py.
+    '''
+    Exercise: Assignment-2
+    Implement the updateHand function. Make sure this function has
+    no side effects: i.e., it must not mutate the hand passed in.
+    Before pasting your function definition here, be sure you've passed
+    the appropriate tests in test_ps4a.py.
+    '''
 
 def updateHand(hand, word):
     """
