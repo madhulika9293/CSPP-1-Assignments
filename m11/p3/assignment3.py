@@ -21,12 +21,12 @@ def isValidWord(word, hand, wordList):
     if word in wordList:
         hand_char = hand.keys()
         for char in word:
-                if char in hand_char:
-                    pass
-                else:
-                    return False
-                    break
-        return True
+            if char in hand_char:
+                pass
+            else:
+                return False
+                break
+            return True
 
 
 def main():
