@@ -1,6 +1,9 @@
 '''
 Exercise: Assignment-1
-The first step is to implement some code that allows us to calculate the score for a single word. The function get_word_score should accept as input a string of lowercase letters (a word) and return the integer score for that word, using the game's scoring rules.
+The first step is to implement some code that allows us
+to calculate the score for a single word. The function
+get_word_score should accept as input a string of lowercase letters
+(a word) and return the integer score for that word, using the game's scoring rules.
 '''
 
 def get_word_score(word, n):
