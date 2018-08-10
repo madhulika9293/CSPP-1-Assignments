@@ -24,8 +24,6 @@ def updateHand(hand, word):
         if char in hand:
             hand[char] = hand[char]-1
     return hand
-    
-    
 
 def main():
     n=input()
@@ -36,8 +34,6 @@ def main():
         adict[l[0]]=int(l[1])
     data1=input()
     print(updateHand(adict,data1))
-        
 
-
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
