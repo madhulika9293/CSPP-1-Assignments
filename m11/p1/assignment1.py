@@ -30,7 +30,7 @@ def get_word_score(word, hand_size):
     for char in word:
         score_word += scrabble_letter_values[char]
     if len(word) == hand_size:
-        return  score_word*len(word))+50
+        return  (score_word*len(word))+50
     return  score_word*len(word)
 
 
