@@ -5,23 +5,23 @@ you've passed the appropriate tests in test_ps4a.py before
 pasting your function definition here.
 '''
 
-def isValidWord(word, hand, wordList):
+def is_validword(word, hand, word_list):
     """
-    Returns True if word is in the wordList and is entirely
+    Returns True if word is in the word_list and is entirely
     composed of letters in the hand. Otherwise, returns False.
 
-    Does not mutate hand or wordList.
+    Does not mutate hand or word_list.
 
     word: string
     hand: dictionary (string -> int)
-    wordList: list of lowercase strings
+    word_list: list of lowercase strings
     """
     count = 0
     for char in word:
         if char in hand:
             count += 1
     if count == len(word):
-        if word in wordList:
+        if word in word_list:
             return True
     return False
 
@@ -34,7 +34,7 @@ def main():
         l = data.split()
         adict[l[0]] = int(l[1])
     l2 = input().split()
-    print(isValidWord(word, adict, l2))
+    print(is_validword(word, adict, l2))
 
 if __name__ == "__main__":
     main()
