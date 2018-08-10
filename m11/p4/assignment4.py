@@ -22,12 +22,12 @@ def calculate_handlen(hand):
 
 def main():
     ''' This is the main function'''
-    n = input()
+    num_inp = input()
     adict = {}
-    for _ in range(int(n)):
+    for _ in range(int(num_inp)):
         data = input()
-        l = data.split()
-        adict[l[0]] = int(l[1])
+        l_inp = data.split()
+        adict[l_inp[0]] = int(l_inp[1])
     print(calculate_handlen(adict))
 
 if __name__ == "__main__":
