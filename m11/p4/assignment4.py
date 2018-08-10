@@ -14,10 +14,10 @@ def calculate_handlen(hand):
     hand: dictionary (string int)
     returns: integer
     """
-    sum = 0
+    sum_val = 0
     for key_dict in hand:
-        sum += hand[key_dict]
-    return sum
+        sum_val += hand[key_dict]
+    return sum_val
 
 
 def main():
