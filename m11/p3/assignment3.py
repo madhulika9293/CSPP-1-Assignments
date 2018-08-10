@@ -22,7 +22,7 @@ def isValidWord(word, hand, wordList):
     for char in word:
         if char in hand:
             count += 1
-    if count == len(hand):
+    if count == len(word):
         if word in wordList:
             return True
     return False
