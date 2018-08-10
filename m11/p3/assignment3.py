@@ -32,7 +32,7 @@ def main():
     word = input()
     num_inp = int(input())
     adict = {}
-    for i in range(num_inp):
+    for _ in range(num_inp):
         data = input()
         l_inp = data.split()
         adict[l_inp[0]] = int(l_inp[1])
