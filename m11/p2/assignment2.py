@@ -29,12 +29,12 @@ def update_hand(hand, word):
 
 def main():
     ''' Main Function '''
-    n = input()
+    num_inp = input()
     adict = {}
-    for i in range(int(n)):
+    for i in range(int(num_inp)):
         data = input()
-        l = data.split()
-        adict[l[0]] = int(l[1])
+        l_inp = data.split()
+        adict[l_inp[0]] = int(l_inp[1])
     data1 = input()
     print(update_hand(adict, data1))
 
