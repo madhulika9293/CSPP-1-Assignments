@@ -26,15 +26,18 @@ def is_validword(word, hand, word_list):
     return False
 
 def main():
+    '''
+    Main function
+    '''
     word = input()
-    n = int(input())
+    num_inp = int(input())
     adict = {}
-    for i in range(n):
+    for i in range(num_inp):
         data = input()
-        l = data.split()
-        adict[l[0]] = int(l[1])
-    l2 = input().split()
-    print(is_validword(word, adict, l2))
+        l_inp = data.split()
+        adict[l_inp[0]] = int(l_inp[1])
+    l2_inp = input().split()
+    print(is_validword(word, adict, l2_inp))
 
 if __name__ == "__main__":
     main()
