@@ -35,7 +35,6 @@ def main():
         l=data.split()
         adict[l[0]]=int(l[1])
     data1=input()
-    print(adict)
     print(updateHand(adict,data1))
         
 
