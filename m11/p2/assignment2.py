@@ -31,7 +31,7 @@ def main():
     ''' Main Function '''
     num_inp = input()
     adict = {}
-    for i in range(int(num_inp)):
+    for _ in range(int(num_inp)):
         data = input()
         l_inp = data.split()
         adict[l_inp[0]] = int(l_inp[1])
