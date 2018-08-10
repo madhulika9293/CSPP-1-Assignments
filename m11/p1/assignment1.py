@@ -24,7 +24,6 @@ def get_word_score(word, n):
     's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
     }
     
-    word = lower(word)
     for char in word:
         sum += SCRABBLE_LETTER_VALUES[char]
     if len(word) == n:
