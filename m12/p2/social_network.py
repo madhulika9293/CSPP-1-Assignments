@@ -14,7 +14,8 @@ def follow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    pass
+    network[arg1] = 
+    
 
 def unfollow(network, arg1, arg2):
     '''
@@ -51,6 +52,7 @@ def main():
         i += 1
         line = input()
         output = line.split(" ")
+        print(network)
         print(output)
         if output[0] == "follow":
             network = follow(network, output[1], output[2])
