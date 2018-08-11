@@ -41,7 +41,9 @@ def create_social_network(data):
     adict = {}
     for (i, j) in enumerate(inp_1):
         inp_1[i] = j.split(" follows ")
-    return inp_1
+        adict[j[0]] = j[1]
+
+    return adict
 
 def main():
     '''
