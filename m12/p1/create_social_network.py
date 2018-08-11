@@ -35,7 +35,6 @@ def create_social_network(data):
     # remove the pass below and start writing your code
 
     # To obtain each line
-    global adict
     adict = {}
     inp_1 = data.split("\n")
     inp_1 = inp_1[:len(inp_1)-1]
@@ -57,13 +56,18 @@ def main():
     lines = input()
     if len(lines) < 3:
         lines = int(lines)
+        for i in range(lines):
+            i += 1
+            string += input()
+            string += '\n'
+        print(create_social_network(string))
     else:
-        lines = lines[0:1]
-    for i in range(lines):
-        i += 1
-        string += input()
-        string += '\n'
-    print(create_social_network(string))
+        print({})
+    # for i in range(lines):
+    #     i += 1
+    #     string += input()
+    #     string += '\n'
+    # print(create_social_network(string))
 
 if __name__ == "__main__":
     main()
