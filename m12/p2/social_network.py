@@ -14,8 +14,8 @@ def follow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    return network[arg1].extend(arg2) 
-    
+    network[arg1] = network[arg1].extend(arg2) 
+    return network
 
 def unfollow(network, arg1, arg2):
     '''
