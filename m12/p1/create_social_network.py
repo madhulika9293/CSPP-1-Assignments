@@ -41,10 +41,13 @@ def create_social_network(data):
     adict = {}
     for (i, j) in enumerate(inp_1):
         inp_1[i] = j.split(" follows ")
-        # adict[] = j[1]
-
-    return inp_1
-
+        # print(inp_1[i][0])
+        if inp_1[i][0] not in adict:
+            adict[inp_1[i][0]] = inp_1[i][1]
+        else:
+            adict[inp_1[i][0]].extend(inp_1[i][1])
+    return adict
+    
 def main():
     '''
         handling testcase input and printing output
