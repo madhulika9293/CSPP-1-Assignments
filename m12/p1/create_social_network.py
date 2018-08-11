@@ -55,14 +55,13 @@ def main():
         handling testcase input and printing output
     '''
     string = ''
-    lines = input()
-    if len(lines) > 0:
-        lines = int(lines)
-        for i in range(lines):
-            i += 1
-            string += input()
-            string += '\n'
-        print(create_social_network(string))
+    lines = int(input())
+    # lines = int(lines)
+    for i in range(lines):
+        i += 1
+        string += input()
+        string += '\n'
+    print(create_social_network(string))
 
 if __name__ == "__main__":
     main()
