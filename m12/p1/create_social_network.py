@@ -36,17 +36,20 @@ def create_social_network(data):
 
     # To obtain each line
     adict = {}
-    inp_1 = data.split("\n")
-    inp_1 = inp_1[:len(inp_1)-1]
+    if data.count('\n'):
+        inp_1 = data.split("\n")
+        inp_1 = inp_1[:len(inp_1)-1]
 
-    for (i, j) in enumerate(inp_1):
-        inp_1[i] = j.split(" follows ")
-        # print(inp_1[i][0])
-        if inp_1[i][0] not in adict:
-            adict[inp_1[i][0]] = inp_1[i][1].split(',')
-        else:
-            adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
-    return adict
+        for (i, j) in enumerate(inp_1):
+            inp_1[i] = j.split(" follows ")
+            # print(inp_1[i][0])
+            if inp_1[i][0] not in adict:
+                adict[inp_1[i][0]] = inp_1[i][1].split(',')
+            else:
+                adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
+        return adict
+    else:
+        return adict
 
 def main():
     '''
@@ -54,21 +57,13 @@ def main():
     '''
     string = ''
     lines = input()
-    if len(lines) > 1:
+    if len(lines) > 0:
         lines = int(lines)
         for i in range(lines):
             i += 1
             string += input()
             string += '\n'
         print(create_social_network(string))
-    else:
-        dict = {}
-        print(dict)
-    # for i in range(lines):
-    #     i += 1
-    #     string += input()
-    #     string += '\n'
-    # print(create_social_network(string))
 
 if __name__ == "__main__":
     main()
