@@ -56,7 +56,6 @@ def main():
     '''
     string = ''
     lines = int(input())
-    # lines = int(lines)
     for i in range(lines):
         i += 1
         string += input()
