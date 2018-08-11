@@ -55,7 +55,7 @@ def main():
     '''
     string = ''
     lines = input()
-    if isinstance(lines, int):
+    if len(lines) < 3:
         lines = int(lines)
     else:
         lines = lines[0:1]
