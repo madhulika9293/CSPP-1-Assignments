@@ -56,7 +56,7 @@ def main():
     '''
     string = ''
     lines = input()
-    if len(lines) > 0:
+    if not isinstance(lines, string):
         lines = int(lines)
         for i in range(lines):
             i += 1
