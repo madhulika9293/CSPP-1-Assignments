@@ -36,6 +36,7 @@ def create_social_network(data):
 
     # To obtain each line
     adict = {}
+    print(data.count('\n'))
     if data.count('\n'):
         inp_1 = data.split("\n")
         inp_1 = inp_1[:len(inp_1)-1]
