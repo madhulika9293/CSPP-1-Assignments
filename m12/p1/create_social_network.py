@@ -43,9 +43,9 @@ def create_social_network(data):
         inp_1[i] = j.split(" follows ")
         # print(inp_1[i][0])
         if inp_1[i][0] not in adict:
-            adict[inp_1[i][0]] = inp_1[i][1]
+            adict[inp_1[i][0]] = inp_1[i][1].split(',')
         else:
-            adict[inp_1[i][0]].extend(inp_1[i][1])
+            adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
     return adict
     
 def main():
