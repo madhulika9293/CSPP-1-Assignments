@@ -40,7 +40,7 @@ def create_social_network(data):
     
     adict = {}
     for (_, j) in enumerate(inp_1):
-        print(_, j)
+        # print(_, j)
         j = j.split(" follows ")
     return inp_1
 
