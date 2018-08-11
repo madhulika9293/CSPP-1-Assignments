@@ -54,7 +54,11 @@ def main():
         handling testcase input and printing output
     '''
     string = ''
-    lines = int(input()[0:1])
+    lines = input()
+    if isinstance(lines, int):
+        lines = int(lines)
+    else:
+        lines = lines[0:1]
     for i in range(lines):
         i += 1
         string += input()
