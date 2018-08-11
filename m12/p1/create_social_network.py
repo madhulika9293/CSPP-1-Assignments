@@ -62,7 +62,8 @@ def main():
             string += '\n'
         print(create_social_network(string))
     else:
-        print({})
+        dict = {}
+        print(dict)
     # for i in range(lines):
     #     i += 1
     #     string += input()
