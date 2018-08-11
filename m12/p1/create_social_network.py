@@ -35,13 +35,14 @@ def create_social_network(data):
     # remove the pass below and start writing your code
 
     # To obtain each line
+    global adict
+    adict = {}
     inp_1 = data.split("\n")
     inp_1 = inp_1[:len(inp_1)-1]
 
-    adict = {}
     for (i, j) in enumerate(inp_1):
         inp_1[i] = j.split(" follows ")
-        # print(inp_1[i][0])
+        print(inp_1[i][0])
         if inp_1[i][0] not in adict:
             adict[inp_1[i][0]] = inp_1[i][1].split(',')
         else:
@@ -53,7 +54,7 @@ def main():
         handling testcase input and printing output
     '''
     string = ''
-    lines = int(input())
+    lines = input()
     for i in range(lines):
         i += 1
         string += input()
