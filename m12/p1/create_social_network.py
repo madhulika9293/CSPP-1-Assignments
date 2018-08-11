@@ -48,8 +48,7 @@ def create_social_network(data):
             else:
                 adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
         return adict
-    else:
-        return adict
+    return adict
 
 def main():
     '''
