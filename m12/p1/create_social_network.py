@@ -37,7 +37,7 @@ def create_social_network(data):
     # To obtain each line
     inp_1 = data.split("\n")
     inp_1 = inp_1[:len(inp_1)-1]
- 
+
     adict = {}
     for (i, j) in enumerate(inp_1):
         inp_1[i] = j.split(" follows ")
