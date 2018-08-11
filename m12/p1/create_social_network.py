@@ -39,9 +39,8 @@ def create_social_network(data):
     inp_1 = inp_1[:len(inp_1)-1]
     
     adict = {}
-    for (_, j) in enumerate(inp_1):
-        # print(_, j)
-        j = j.split(" follows ")
+    for (i, j) in enumerate(inp_1):
+        inp_1[i] = j.split(" follows ")
     return inp_1
 
 def main():
