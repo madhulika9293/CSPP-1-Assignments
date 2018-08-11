@@ -54,7 +54,7 @@ def main():
     '''
     string = ''
     lines = input()
-    if len(lines) < 3:
+    if len(lines) > 1:
         lines = int(lines)
         for i in range(lines):
             i += 1
