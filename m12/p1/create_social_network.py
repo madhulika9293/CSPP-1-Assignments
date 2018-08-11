@@ -33,7 +33,16 @@ def create_social_network(data):
     '''
 
     # remove the pass below and start writing your code
-    pass
+
+    # To obtain each line
+    inp_1 = data.split("\n")
+    inp_1 = inp_1[:len(inp_1)-1]
+    
+    adict = {}
+    for (_, j) in enumerate(inp_1):
+        print(_, j)
+        j = j.split(" follows ")
+    return inp_1
 
 def main():
     '''
@@ -45,7 +54,6 @@ def main():
         i += 1
         string += input()
         string += '\n'
-
     print(create_social_network(string))
 
 if __name__ == "__main__":
