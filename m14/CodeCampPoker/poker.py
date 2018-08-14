@@ -7,11 +7,12 @@ NO_OF_SETS = 1
 NO_OF_CARDS = NO_OF_SETS*52
 HAND_SIZE = 5
 
-map_dict = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
+MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
-def is_ascending(list):
+def is_ascending(lst):
+    ''' Function for increment by 1'''
     for i in range(HAND_SIZE-1):
-        if list[i+1] - list[i] > 1:
+        if lst[i+1] - lst[i] > 1:
             return False
     return True
 
@@ -23,8 +24,8 @@ def hand_value(hand):
         hand_temp += [card[:1],]
         hand_s += [card[1:],]
     for i in hand_temp:
-        if i in map_dict:
-            hand_num += [map_dict[i],]
+        if i in MAP_DICT:
+            hand_num += [MAP_DICT[i],]
         else:
             hand_num += [int(i),]
     hand_num.sort()
