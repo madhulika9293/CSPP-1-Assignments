@@ -9,28 +9,31 @@ HAND_SIZE = 5
 
 MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
-def is_ascending(lst):
-    ''' Function for increment by 1'''
-    for i in range(HAND_SIZE-1):
-        if lst[i+1] - lst[i] > 1:
-            return False
-    return True
+# def is_ascending(lst):
+#     ''' Function for increment by 1'''
+#     for i in range(HAND_SIZE-1):
+#         if lst[i+1] - lst[i] > 1:
+#             return False
+#     return True
 
-def hand_value(hand):
-    ''' Function for hand values'''
-    hand_s = []
-    hand_num = []
-    hand_temp = []
-    for card in hand:
-        hand_temp += [card[:1],]
-        hand_s += [card[1:],]
-    for i in hand_temp:
-        if i in MAP_DICT:
-            hand_num += [MAP_DICT[i],]
-        else:
-            hand_num += [int(i),]
-    hand_num.sort()
-    return hand_num, hand_s
+# def hand_value(hand):
+#     ''' Function for hand values'''
+#     hand_num =[]
+#     hand_s =[]
+#     for c,s in hand:
+#         hand_num.append(c)
+#         hand_s.append(s)
+#     for i,j in enumerate(hand_num):
+#         if j in MAP_DICT:
+#             hand_num[i] = MAP_DICT[j]
+#         else:
+#             hand_num[i] = int(j)
+#     hand_num.sort()
+#     if hand_num[-1] == 14:
+#         if hand_num[:-1] == [2,3,4,5]:
+#             hand_num[-1] = int(1)
+#         hand_num.sort()
+#     return hand_num, hand_s
 
 def is_straight(hand):
     '''
@@ -42,8 +45,9 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    return is_ascending(hand_value(hand)[0])
-
+    # return is_ascending(hand_value(hand)[0])
+    card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
+    return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
 
 def is_flush(hand):
     '''
@@ -54,7 +58,9 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return min(hand_value(hand)[1]) == max(hand_value(hand)[1])
+    suit_values = set(['SHDC'.index(s) for c,s in hand])
+    return len(suit_values) == 1
+    # return min(hand_value(hand)[1]) == max(hand_value(hand)[1])
 
 def hand_rank(hand):
     '''
