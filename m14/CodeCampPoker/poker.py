@@ -11,9 +11,10 @@ map_dict = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
 def is_ascending(list):
     for i in range(HAND_SIZE-1):
-        if not(list[i] > list[i+1]):
+        if list[i] < list[i+1]:
+            pass
+        else:
             return False
-            break
     return True
 
 def hand_value(hand):
@@ -55,7 +56,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return min(hand_value(hand)[1]) == min(hand_value(hand)[1]) and is_ascending(hand_value(hand)[0])
+    return min(hand_value(hand)[1]) == max(hand_value(hand)[1]) and is_ascending(hand_value(hand)[0])
 
     
 
