@@ -17,6 +17,7 @@ def is_ascending(lst):
     return True
 
 def hand_value(hand):
+    ''' Function for hand values'''
     hand_s = []
     hand_num = []
     hand_temp = []
