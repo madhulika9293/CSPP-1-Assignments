@@ -56,7 +56,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return min(hand_value(hand)[1]) == max(hand_value(hand)[1]) and is_ascending(hand_value(hand)[0])
+    return min(hand_value(hand)[1]) == max(hand_value(hand)[1])
 
     
 
