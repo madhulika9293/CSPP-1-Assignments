@@ -47,7 +47,7 @@ def is_straight(hand):
     '''
     # return is_ascending(hand_value(hand)[0])
     card_values = set(['--23456789TJQKA'.index(c) for c, s in hand])
-    return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
+    return len(card_values) == 5 and (max(card_values)-min(card_values) == 4)
 
 def is_flush(hand):
     '''
