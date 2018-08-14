@@ -14,7 +14,7 @@ def is_ascending(list):
         if list[i+1] - list[i] > 1:
             return False
     return True
-        
+
 def hand_value(hand):
     hand_s = []
     hand_num = []
@@ -29,7 +29,6 @@ def hand_value(hand):
             hand_num += [int(i),]
     hand_num.sort()
     return hand_num, hand_s
-    
 
 def is_straight(hand):
     '''
@@ -42,7 +41,6 @@ def is_straight(hand):
         Write the code for it and return True if it is a straight else return False
     '''
     return is_ascending(hand_value(hand)[0])
-    
 
 
 def is_flush(hand):
