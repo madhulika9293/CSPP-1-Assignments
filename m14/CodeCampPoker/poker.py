@@ -11,12 +11,10 @@ map_dict = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
 def is_ascending(list):
     for i in range(HAND_SIZE-1):
-        if list[i+1] - list[i] == 1:
-            pass
-        else:
+        if list[i+1] - list[i] != 1:
             return False
     return True
-
+        
 def hand_value(hand):
     hand_s = []
     hand_num = []
