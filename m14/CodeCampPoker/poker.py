@@ -54,8 +54,6 @@ def is_flush(hand):
     '''
     return min(hand_value(hand)[1]) == max(hand_value(hand)[1])
 
-    
-
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
