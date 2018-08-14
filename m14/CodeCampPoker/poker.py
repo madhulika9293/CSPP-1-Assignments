@@ -3,8 +3,8 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-NO_OF_SETS = 1
-NO_OF_CARDS = NO_OF_SETS*52
+# NO_OF_SETS = 1
+# NO_OF_CARDS = NO_OF_SETS*52
 HAND_SIZE = 5
 
 MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
