@@ -3,6 +3,34 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+NO_OF_SETS = 1
+NO_OF_CARDS = NO_OF_SETS*52
+HAND_SIZE = 5
+
+map_dict = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
+
+def is_ascending(list):
+    for i in range(HAND_SIZE-1):
+        if not(list[i] > list[i+1]):
+            return False
+            break
+    return True
+
+def hand_value(hand):
+    hand_s = []
+    hand_num = []
+    hand_temp = []
+    for card in hand:
+        hand_temp += [card[:1],]
+        hand_s += [card[1:],]
+    for i in hand_temp:
+        if i in map_dict:
+            hand_num += [map_dict[i],]
+        else:
+            hand_num += [int(i),]
+    hand_num.sort()
+    return hand_num, hand_s
+    
 
 def is_straight(hand):
     '''
@@ -14,7 +42,9 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    pass
+    return is_ascending(hand_value(hand)[0])
+    
+
 
 def is_flush(hand):
     '''
@@ -25,7 +55,10 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    pass
+    return min(hand_value(hand)[1]) == min(hand_value(hand)[1]) and
+        is_ascending(hand_value(hand)[0]):
+
+    
 
 def hand_rank(hand):
     '''
@@ -51,7 +84,14 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    return 1
+    if is_flush(hand) and is_straight(hand):
+        return 3
+    elif is_flush(hand):
+        return 2
+    elif is_straight(hand):
+        return 1
+    else:
+        return 0
 
 def poker(hands):
     '''
