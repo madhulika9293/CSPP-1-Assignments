@@ -10,7 +10,8 @@ HAND_SIZE = 5
 # MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
 def crd_v(hand):
-    excep = {2,3,4,5,14}
+    '''calculates card values'''
+    excep = {2, 3, 4, 5, 14}
     crd_v = set('--23456789TJQKA'.index(c) for c, s in hand)
     if crd_v == excep:
         crd_v.add(1)
@@ -29,15 +30,20 @@ def is_flush(hand):
     ''' flush hand function '''
     return len(st_v(hand)) == 1
 
+def is_four_of_a_kind(hand):
+    ''' Four of a kind hand function '''
+    return len(crd_v(hand)) == 2
+
+
 def hand_rank(hand):
     ''' ranks the card '''
     if is_flush(hand) and is_straight(hand):
-        return 0
-    if is_flush(hand):
         return 1
+    if is_flush(hand):
+        return 4
     if is_straight(hand):
-        return 2
-    return 3
+        return 5
+    return 10
 
 def poker(hands):
     '''
