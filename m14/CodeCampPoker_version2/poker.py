@@ -40,7 +40,7 @@ def is_fullhouse(hand):
 
 def is_three_of_kind(hand):
     ''' Three of kind hand function '''
-    return list(collections.Counter(crd_v(hand)).values()) == [3, 1, 1]
+    return list(collections.Counter(crd_v(hand)).values()) == [1, 1, 3]
 
 def is_twopair(hand):
     ''' Three of kind hand function '''
