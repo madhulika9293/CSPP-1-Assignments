@@ -18,6 +18,7 @@ def crd_v(hand):
     return crd_val
 
 def st_v(hand):
+    '''calculates suit values'''
     st_val = [s for c, s in hand]
     return st_val
 
@@ -36,6 +37,10 @@ def is_four_of_a_kind(hand):
 def is_fullhouse(hand):
     ''' Full House hand function '''
     return list(collections.Counter(crd_v(hand)).values()) == [3, 2]
+
+def is_three_of_kind(hand):
+    ''' Three of kind hand function '''
+    return list(collections.Counter(crd_v(hand)).values()) == [3, 1, 1]
 
 def hand_rank(hand):
     ''' ranks the card '''
