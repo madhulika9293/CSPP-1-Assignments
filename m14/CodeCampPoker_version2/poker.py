@@ -31,7 +31,7 @@ def is_flush(hand):
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
-    return list(collections.counter(crd_val(hand)).values) == [4, 1]
+    return list(collections.Counter(crd_val(hand)).values) == [4, 1]
 
 
 def hand_rank(hand):
