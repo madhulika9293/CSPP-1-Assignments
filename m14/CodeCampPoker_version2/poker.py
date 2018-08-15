@@ -11,15 +11,15 @@ HAND_SIZE = 5
 
 def crd_v(hand):
     '''calculates card values'''
-    excep = {2, 3, 4, 5, 14}
-    crd_v = set('--23456789TJQKA'.index(c) for c, s in hand)
+    excep = [2, 3, 4, 5, 14]
+    crd_v = ['--23456789TJQKA'.index(c) for c, s in hand]
     if crd_v == excep:
+        crd_v.remove(14)
         crd_v.add(1)
-        crd_v = crd_v - {14}
     return crd_v
 
 def st_v(hand):
-    st_v = set(s for c, s in hand)
+    st_v = [s for c, s in hand]
     return st_v
 
 def is_straight(hand):
@@ -28,11 +28,10 @@ def is_straight(hand):
 
 def is_flush(hand):
     ''' flush hand function '''
-    return len(st_v(hand)) == 1
+    return len(set(st_v(hand))) == 1
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
-    return len(crd_v(hand)) == 2
 
 
 def hand_rank(hand):
