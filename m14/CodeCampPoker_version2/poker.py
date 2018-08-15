@@ -12,11 +12,11 @@ HAND_SIZE = 5
 def crd_v(hand):
     '''calculates card values'''
     excep = [2, 3, 4, 5, 14]
-    crd_v = ['--23456789TJQKA'.index(c) for c, s in hand]
-    if crd_v == excep:
-        crd_v.remove(14)
-        crd_v.add(1)
-    return crd_v
+    crd_val = ['--23456789TJQKA'.index(c) for c, s in hand]
+    if crd_val == excep:
+        crd_val.remove(14)
+        crd_val.add(1)
+    return crd_val
 
 def st_v(hand):
     st_v = [s for c, s in hand]
