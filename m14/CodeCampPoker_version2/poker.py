@@ -44,19 +44,20 @@ def is_three_of_kind(hand):
 
 def hand_rank(hand):
     ''' ranks the card '''
+    hnd_rnk = 0
     if is_flush(hand) and is_straight(hand):
-        return 1
+        hnd_rnk = 1
     if is_four_of_a_kind(hand):
-        return 2
+        hnd_rnk = 2
     if is_fullhouse(hand):
-        return 3
+        hnd_rnk = 3
     if is_flush(hand):
-        return 4
+        hnd_rnk = 4
     if is_straight(hand):
-        return 5
+        hnd_rnk = 5
     if is_three_of_kind(hand):
-        return 6
-    return 10
+        hnd_rnk = 6
+    return hnd_rnk
 
 def poker(hands):
     '''
