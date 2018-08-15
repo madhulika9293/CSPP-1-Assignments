@@ -69,7 +69,7 @@ def hand_rank(hand):
     if is_onepair(hand):
         return 8
     return 9
-    
+
 
 def poker(hands):
     '''
