@@ -52,23 +52,45 @@ def is_onepair(hand):
 
 def hand_rank(hand):
     ''' ranks the card '''
+    rank = 0
     if is_flush(hand) and is_straight(hand):
-        return 1
-    if is_four_of_a_kind(hand):
-        return 2
-    if is_fullhouse(hand):
-        return 3
-    if is_flush(hand):
-        return 4
-    if is_straight(hand):
-        return 5
-    if is_three_of_kind(hand):
-        return 6
-    if is_twopair(hand):
-        return 7
-    if is_onepair(hand):
-        return 8
-    return 9
+        rank = 1
+    elif is_four_of_a_kind(hand):
+        rank = 2
+    elif is_fullhouse(hand):
+        rank = 3
+    elif is_flush(hand):
+        rank = 4
+    elif is_straight(hand):
+        rank = 5
+    elif is_three_of_kind(hand):
+        rank = 6
+    elif is_twopair(hand):
+        rank = 7
+    elif is_onepair(hand):
+        rank = 8
+    else:
+        rank = 9
+    return rank
+
+
+    # if is_flush(hand) and is_straight(hand):
+    #     return 1
+    # if is_four_of_a_kind(hand):
+    #     return 2
+    # if is_fullhouse(hand):
+    #     return 3
+    # if is_flush(hand):
+    #     return 4
+    # if is_straight(hand):
+    #     return 5
+    # if is_three_of_kind(hand):
+    #     return 6
+    # if is_twopair(hand):
+    #     return 7
+    # if is_onepair(hand):
+    #     return 8
+    # return 9
 
 
 def poker(hands):
