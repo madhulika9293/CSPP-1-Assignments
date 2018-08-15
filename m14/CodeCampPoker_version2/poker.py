@@ -39,6 +39,8 @@ def hand_rank(hand):
     ''' ranks the card '''
     if is_flush(hand) and is_straight(hand):
         return 1
+    if is_four_of_a_kind(hand):
+        return 2
     if is_flush(hand):
         return 4
     if is_straight(hand):
