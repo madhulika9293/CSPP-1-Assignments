@@ -56,6 +56,7 @@ def hand_rank(hand):
         return 5
     if is_three_of_kind(hand):
         return 6
+    return 10
     
 
 def poker(hands):
