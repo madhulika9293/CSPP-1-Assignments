@@ -7,33 +7,21 @@
 # NO_OF_CARDS = NO_OF_SETS*52
 HAND_SIZE = 5
 
-MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
+# MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
-# def is_ascending(lst):
-#     ''' Function for increment by 1'''
-#     for i in range(HAND_SIZE-1):
-#         if lst[i+1] - lst[i] > 1:
-#             return False
-#     return True
+def crd_v(hand):
+    excep = {2,3,4,5,14}
+    crd_v = set('--23456789TJQKA'.index(c) for c, s in hand)
+    if not excep.isdisjoint(crd_v):
+        crd_v.add(1)
+        crd_v = crd_v - {14}
+    return crd_v
 
-# def hand_value(hand):
-#     ''' Function for hand values'''
-#     hand_num =[]
-#     hand_s =[]
-#     for c,s in hand:
-#         hand_num.append(c)
-#         hand_s.append(s)
-#     for i,j in enumerate(hand_num):
-#         if j in MAP_DICT:
-#             hand_num[i] = MAP_DICT[j]
-#         else:
-#             hand_num[i] = int(j)
-#     hand_num.sort()
-#     if hand_num[-1] == 14:
-#         if hand_num[:-1] == [2,3,4,5]:
-#             hand_num[-1] = int(1)
-#         hand_num.sort()
-#     return hand_num, hand_s
+def st_v(hand):
+    st_v = set(s for c, s in hand)
+    return st_v
+
+    
 
 def is_straight(hand):
     '''
@@ -45,9 +33,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    # return is_ascending(hand_value(hand)[0])
-    card_values = set('--23456789TJQKA'.index(c) for c, s in hand)
-    return len(card_values) == 5 and (max(card_values)-min(card_values) == 4)
+    return len(crd_v(hand)) == 5 and (max(crd_v(hand))-min(crd_v(hand)) == 4)
 
 def is_flush(hand):
     '''
@@ -58,9 +44,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suit_values = set('SHDC'.index(s) for c, s in hand)
-    return len(suit_values) == 1
-    # return min(hand_value(hand)[1]) == max(hand_value(hand)[1])
+    return len(st_v(hand)) == 1
 
 def hand_rank(hand):
     '''
@@ -70,22 +54,6 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-
-    # By now you should have seen the way a card is represented.
-    # If you haven't then go the main or poker function and print the hands
-    # Each card is coded as a 2 character string. Example Kind of Hearts is KH
-    # First character for face value 2,3,4,5,6,7,8,9,T,J,Q,K,A
-    # Second character for the suit S (Spade), H (Heart), D (Diamond), C (Clubs)
-    # What would be the logic to determine if a hand is a straight or flush?
-    # Let's not think about the logic in the hand_rank function
-    # Instead break it down into two sub functions is_straight and is_flush
-
-    # check for straight, flush and straight flush
-    # best hand of these 3 would be a straight flush with the return value 3
-    # the second best would be a flush with the return value 2
-    # third would be a straight with the return value 1
-    # any other hand would be the fourth best with the return value 0
-    # max in poker function uses these return values to select the best hand
     if is_flush(hand) and is_straight(hand):
         return 3
     if is_flush(hand):
@@ -104,14 +72,6 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-
-    # the line below may be new to you
-    # max function is provided by python library
-    # learn how it works, in particular the key argument, from the link
-    # https://www.programiz.com/python-programming/methods/built-in/max
-    # hand_rank is a function passed to max
-    # hand_rank takes a hand and returns its rank
-    # max uses the rank returned by hand_rank and returns the best hand
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
