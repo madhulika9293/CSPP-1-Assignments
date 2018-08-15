@@ -44,7 +44,7 @@ def is_three_of_kind(hand):
 
 def is_twopair(hand):
     ''' Three of kind hand function '''
-    return list(collections.Counter(crd_v(hand)).values()) == [1, 2, 2]
+    return sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
 
 def hand_rank(hand):
     ''' ranks the card '''
