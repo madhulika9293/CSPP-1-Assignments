@@ -12,7 +12,7 @@ HAND_SIZE = 5
 def crd_v(hand):
     excep = {2,3,4,5,14}
     crd_v = set('--23456789TJQKA'.index(c) for c, s in hand)
-    if not excep.isdisjoint(crd_v):
+    if crd_v == excep:
         crd_v.add(1)
         crd_v = crd_v - {14}
     return crd_v
