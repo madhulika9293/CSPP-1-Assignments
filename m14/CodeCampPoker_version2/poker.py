@@ -46,6 +46,10 @@ def is_twopair(hand):
     ''' Three of kind hand function '''
     return sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
 
+def is_onepair(hand):
+    ''' Three of kind hand function '''
+    return sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
+
 def hand_rank(hand):
     ''' ranks the card '''
     if is_flush(hand) and is_straight(hand):
