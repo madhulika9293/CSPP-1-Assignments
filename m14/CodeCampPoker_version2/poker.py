@@ -3,11 +3,10 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+import collections
+
 # NO_OF_SETS = 1
 # NO_OF_CARDS = NO_OF_SETS*52
-HAND_SIZE = 5
-
-# MAP_DICT = {'T':10, 'J':11, 'Q':12, 'K':12, 'A':13}
 
 def crd_v(hand):
     '''calculates card values'''
@@ -19,8 +18,8 @@ def crd_v(hand):
     return crd_val
 
 def st_v(hand):
-    st_v = [s for c, s in hand]
-    return st_v
+    st_val = [s for c, s in hand]
+    return st_val
 
 def is_straight(hand):
     ''' Straight hand function '''
@@ -32,6 +31,7 @@ def is_flush(hand):
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
+    return list(collections.counter(crd_val(hand)).values) == [4, 1]
 
 
 def hand_rank(hand):
