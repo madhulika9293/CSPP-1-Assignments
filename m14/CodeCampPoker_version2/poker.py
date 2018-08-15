@@ -21,46 +21,23 @@ def st_v(hand):
     st_v = set(s for c, s in hand)
     return st_v
 
-    
-
 def is_straight(hand):
-    '''
-        How do we find out if the given hand is a straight?
-        The hand has a list of cards represented as strings.
-        There are multiple ways of checking if the hand is a straight.
-        Do we need both the characters in the string? No.
-        The first character is good enough to determine a straight
-        Think of an algorithm: given the card face value how to check if it a straight
-        Write the code for it and return True if it is a straight else return False
-    '''
+    ''' Straight hand function '''
     return len(crd_v(hand)) == 5 and (max(crd_v(hand))-min(crd_v(hand)) == 4)
 
 def is_flush(hand):
-    '''
-        How do we find out if the given hand is a flush?
-        The hand has a list of cards represented as strings.
-        Do we need both the characters in the string? No.
-        The second character is good enough to determine a flush
-        Think of an algorithm: given the card suite how to check if it is a flush
-        Write the code for it and return True if it is a flush else return False
-    '''
+    ''' flush hand function '''
     return len(st_v(hand)) == 1
 
 def hand_rank(hand):
-    '''
-        You will code this function. The goal of the function is to
-        return a value that max can use to identify the best hand.
-        As this function is complex we will progressively develop it.
-        The first version should identify if the given hand is a straight
-        or a flush or a straight flush.
-    '''
+    ''' ranks the card '''
     if is_flush(hand) and is_straight(hand):
-        return 3
+        return 0
     if is_flush(hand):
-        return 2
-    if is_straight(hand):
         return 1
-    return 0
+    if is_straight(hand):
+        return 2
+    return 3
 
 def poker(hands):
     '''
@@ -72,7 +49,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    return max(hands, key=hand_rank)
+    return min(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
