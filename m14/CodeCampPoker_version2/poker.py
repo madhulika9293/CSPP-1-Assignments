@@ -47,15 +47,15 @@ def hand_rank(hand):
     hnd_rnk = 0
     if is_flush(hand) and is_straight(hand):
         hnd_rnk = 1
-    if is_four_of_a_kind(hand):
+    elif is_four_of_a_kind(hand):
         hnd_rnk = 2
-    if is_fullhouse(hand):
+    elif is_fullhouse(hand):
         hnd_rnk = 3
-    if is_flush(hand):
+    elif is_flush(hand):
         hnd_rnk = 4
-    if is_straight(hand):
+    elif is_straight(hand):
         hnd_rnk = 5
-    if is_three_of_kind(hand):
+    elif is_three_of_kind(hand):
         hnd_rnk = 6
     return hnd_rnk
 
