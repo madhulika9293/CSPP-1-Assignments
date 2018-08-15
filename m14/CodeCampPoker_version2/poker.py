@@ -66,7 +66,9 @@ def hand_rank(hand):
         return 6
     if is_twopair(hand):
         return 7
-    return 10
+    if is_onepair(hand):
+        return 8
+    return 9
     
 
 def poker(hands):
