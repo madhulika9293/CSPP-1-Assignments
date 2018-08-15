@@ -5,9 +5,6 @@
 '''
 import collections
 
-# NO_OF_SETS = 1
-# NO_OF_CARDS = NO_OF_SETS*52
-
 def crd_v(hand):
     '''calculates card values'''
     excep = [2, 3, 4, 5, 14]
@@ -72,26 +69,6 @@ def hand_rank(hand):
     else:
         rank = 9
     return rank
-
-
-    # if is_flush(hand) and is_straight(hand):
-    #     return 1
-    # if is_four_of_a_kind(hand):
-    #     return 2
-    # if is_fullhouse(hand):
-    #     return 3
-    # if is_flush(hand):
-    #     return 4
-    # if is_straight(hand):
-    #     return 5
-    # if is_three_of_kind(hand):
-    #     return 6
-    # if is_twopair(hand):
-    #     return 7
-    # if is_onepair(hand):
-    #     return 8
-    # return 9
-
 
 def poker(hands):
     '''
