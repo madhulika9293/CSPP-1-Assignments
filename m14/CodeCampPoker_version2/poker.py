@@ -60,6 +60,8 @@ def hand_rank(hand):
         return 5
     if is_three_of_kind(hand):
         return 6
+    if is_twopair(hand):
+        return 7
     return 10
     
 
