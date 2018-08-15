@@ -31,8 +31,11 @@ def is_flush(hand):
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
-    return list(collections.Counter(crd_v(hand)).values) == [4, 1]
+    return list(collections.Counter(crd_v(hand)).values()) == [4, 1]
 
+def is_fullhouse(hand):
+    ''' Full House hand function '''
+    return list(collections.Counter(crd_v(hand)).values()) == [3, 2]
 
 def hand_rank(hand):
     ''' ranks the card '''
