@@ -36,11 +36,11 @@ def is_four_of_a_kind(hand):
 
 def is_fullhouse(hand):
     ''' Full House hand function '''
-    return list(collections.Counter(crd_v(hand)).values()) == [3, 2]
+    return sorted(list(collections.Counter(crd_v(hand)).values())) == [2, 3]
 
 def is_three_of_kind(hand):
     ''' Three of kind hand function '''
-    return list(collections.Counter(crd_v(hand)).values()) == [1, 1, 3]
+    return sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
 
 def is_twopair(hand):
     ''' Three of kind hand function '''
