@@ -29,7 +29,7 @@ def kind(hand, n_len):
         if crd_v(hand).count(ranks) == n_len:
             return ranks
         else:
-            return None
+            return 1
 
 
 def is_four_of_a_kind(hand):
