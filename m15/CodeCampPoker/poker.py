@@ -89,7 +89,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    return max(hands, key=hand_ranks)
+    return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
