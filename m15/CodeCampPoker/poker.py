@@ -23,9 +23,9 @@ def is_flush(hand):
     ''' flush hand function '''
     return len(set(s for c, s in hand)) == 1
 
-def kind(hand, n):
+def kind(hand, n_len):
     for ranks in crd_v(hand):
-        if crd_v(hand).count(ranks) == n:
+        if crd_v(hand).count(ranks) == n_len:
             return ranks
 
 def is_four_of_a_kind(hand):
@@ -72,7 +72,7 @@ def hand_rank(hand):
         return (3, kind(hand, 2), hand_ranks)
     # Two pair
     elif kind(hand, 2) and kind(sorted(hand, reverse=True), 2) and kind(hand, 2) != kind(sorted(hand, reverse=True), 2):
-        return (2, kind(hand, 2), kind(sorted(hand, reverse = True), 2))
+        return (2, kind(hand, 2), kind(sorted(hand, reverse=True), 2))
     # one pair
     elif kind(hand, 2):
         return (1, kind(hand, 2))
