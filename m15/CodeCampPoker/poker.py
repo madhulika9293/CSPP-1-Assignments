@@ -38,21 +38,21 @@ def is_fullhouse(hand):
 def is_three_of_kind(hand):
     ''' Three of kind hand function '''
     hand_tie = collections.Counter(crd_v(hand)).most_common(1)[0][0]
-    bool = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
-    return bool, hand_tie
+    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
+    return bool_val, hand_tie
 
 def is_twopair(hand):
     ''' Three of kind hand function '''
     temp = collections.Counter(crd_v(hand)).most_common(2)
     hand_tie = abs(temp[0][0] - temp[1][0])
-    bool = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
-    return bool, hand_tie
+    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
+    return bool_val, hand_tie
 
 def is_onepair(hand):
     ''' Three of kind hand function '''
     hand_tie = collections.Counter(crd_v(hand)).most_common(1)[0][0]
-    bool = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
-    return bool, hand_tie
+    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
+    return bool_val, hand_tie
 
 def hand_rank(hand):
     ''' ranks the card '''
