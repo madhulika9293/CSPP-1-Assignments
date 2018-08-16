@@ -87,9 +87,8 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    hand_score = [hand_rank(hand) for hand in hands]
-        
-    
+    hand_score = {hand_rank(hand) for hand in hands}
+    print(hand_score)
     return min(hands, key=hand_rank)
 
 if __name__ == "__main__":
