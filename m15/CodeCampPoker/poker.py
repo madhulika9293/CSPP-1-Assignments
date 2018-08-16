@@ -12,7 +12,7 @@ def crd_v(hand):
     if crd_val == excep:
         crd_val.remove(14)
         crd_val.add(1)
-    crd_val = sorted(crd_val, reverse = True)
+    crd_val = sorted(crd_val, reverse=True)
     return crd_val
 
 def is_straight(hand):
