@@ -26,7 +26,7 @@ def is_flush(hand):
 def kind(hand, n):
     for ranks in crd_v(hand):
         if crd_v(hand).count(ranks) == n:
-            return rank
+            return ranks
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
