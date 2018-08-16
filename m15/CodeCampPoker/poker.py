@@ -69,10 +69,10 @@ def hand_rank(hand):
         rank = 4
     # three of a kind
     elif kind(hand, 3):
-        rank = 3
+        return (rank, kind(hand, 2))
     # Two pair
     elif kind(hand, 2) and kind(sorted(hand, reverse = True), 2) and kind(hand, 2) != kind(sorted(hand, reverse = True), 2):
-        rank = 2
+        return (rank, kind(hand, 2))
     # one pair
     elif kind(hand, 2):
         return (rank, kind(hand, 2))
