@@ -8,7 +8,7 @@ import collections
 def crd_v(hand):
     '''calculates card values'''
     excep = [2, 3, 4, 5, 14]
-    crd_val = sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse = True)
+    crd_val = ['--23456789TJQKA'.index(c) for c, s in hand]
     if crd_val == excep:
         crd_val.remove(14)
         crd_val.add(1)
@@ -73,8 +73,9 @@ def hand_rank(hand):
     # Two pair
     elif kind(hand, 2) and kind(sorted(hand, reverse = True), 2) and kind(hand, 2) != kind(sorted(hand, reverse = True), 2):
         rank = 2
+    # one pair
     elif kind(hand, 2):
-        rank = 1
+        return (rank, kind(hand, 2))
     else:
         rank = 0
     return (rank, hand_ranks)
