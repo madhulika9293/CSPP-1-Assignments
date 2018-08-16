@@ -3,7 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-import collections
+# import collections
 
 def crd_v(hand):
     '''calculates card values'''
@@ -30,28 +30,28 @@ def kind(hand, n_len):
             return ranks
     return None
 
-def is_four_of_a_kind(hand):
-    ''' Four of a kind hand function '''
-    return list(collections.Counter(crd_v(hand)).values()) == [4, 1]
+# def is_four_of_a_kind(hand):
+#     ''' Four of a kind hand function '''
+#     return list(collections.Counter(crd_v(hand)).values()) == [4, 1]
 
-def is_fullhouse(hand):
-    ''' Full House hand function '''
-    return sorted(list(collections.Counter(crd_v(hand)).values())) == [2, 3]
+# def is_fullhouse(hand):
+#     ''' Full House hand function '''
+#     return sorted(list(collections.Counter(crd_v(hand)).values())) == [2, 3]
 
-def is_three_of_kind(hand):
-    ''' Three of kind hand function '''
-    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
-    return bool_val
+# def is_three_of_kind(hand):
+#     ''' Three of kind hand function '''
+#     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
+#     return bool_val
 
-def is_twopair(hand):
-    ''' Two pair hand function '''
-    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
-    return bool_val
+# def is_twopair(hand):
+#     ''' Two pair hand function '''
+#     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
+#     return bool_val
 
-def is_onepair(hand):
-    ''' One pair hand function '''
-    bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
-    return bool_val
+# def is_onepair(hand):
+#     ''' One pair hand function '''
+#     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
+#     return bool_val
 
 def hand_rank(hand):
     ''' ranks the card '''
