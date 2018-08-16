@@ -12,8 +12,12 @@ def crd_v(hand):
     if crd_val == excep:
         crd_val.remove(14)
         crd_val.add(1)
-    crd_val = sorted(crd_val, reverse = True)
     return crd_val
+
+def st_v(hand):
+    '''calculates suit values'''
+    st_val = [s for c, s in hand]
+    return st_val
 
 def is_straight(hand):
     ''' Straight hand function '''
@@ -21,12 +25,7 @@ def is_straight(hand):
 
 def is_flush(hand):
     ''' flush hand function '''
-    return len(set(s for c, s in hand)) == 1
-
-def kind(hand, n):
-    for ranks in crd_v(hand):
-        if crd_v(hand).count(ranks) == n:
-            return rank
+    return len(set(st_v(hand))) == 1
 
 def is_four_of_a_kind(hand):
     ''' Four of a kind hand function '''
@@ -38,58 +37,58 @@ def is_fullhouse(hand):
 
 def is_three_of_kind(hand):
     ''' Three of kind hand function '''
+    hand_tie = collections.Counter(crd_v(hand)).most_common(1)[0][0]
     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 3]
-    return bool_val
+    return bool_val, hand_tie
 
 def is_twopair(hand):
-    ''' Two pair hand function '''
+    ''' Three of kind hand function '''
+    temp = collections.Counter(crd_v(hand)).most_common(2)
+    hand_tie = abs(temp[0][0] - temp[1][0])
     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 2, 2]
-    return bool_val
+    return bool_val, hand_tie
 
 def is_onepair(hand):
-    ''' One pair hand function '''
+    ''' Three of kind hand function '''
+    hand_tie = collections.Counter(crd_v(hand)).most_common(1)[0][0]
     bool_val = sorted(list(collections.Counter(crd_v(hand)).values())) == [1, 1, 1, 2]
-    return bool_val
+    return bool_val, hand_tie
 
 def hand_rank(hand):
     ''' ranks the card '''
-    hand_ranks = crd_v(hand)
     rank = 0
     if is_flush(hand) and is_straight(hand):
-        rank = 8
-    # four of a kind
-    elif kind(hand, 4):
-        rank = 7
-    # full house
-    elif kind(hand, 3) and kind(hand, 2):
-        rank = 6
-    elif is_flush(hand):
-        rank = 5
-    elif is_straight(hand):
-        rank = 4
-    # three of a kind
-    elif kind(hand, 3):
-        rank = 3
-    # Two pair
-    elif kind(hand, 2) and kind(sorted(hand, reverse = True), 2) and kind(hand, 2) != kind(sorted(hand, reverse = True), 2):
-        rank = 2
-    elif kind(hand, 2):
         rank = 1
+    elif is_four_of_a_kind(hand):
+        rank = 2
+    elif is_fullhouse(hand):
+        rank = 3
+    elif is_flush(hand):
+        rank = 4
+    elif is_straight(hand):
+        rank = 5
+    elif is_three_of_kind(hand)[0]:
+        rank = 6
+    elif is_twopair(hand)[0]:
+        rank = 7
+    elif is_onepair(hand)[0]:
+        rank = 8
     else:
-        rank = 0
-    return (rank, hand_ranks)
+        rank = 9
+    return rank
 
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
-
         Input: List of 2 or more poker hands
                Each poker hand is represented as a list
                Print the hands to see the hand representation
-
         Output: Return the winning poker hand
     '''
-    return max(hands, key=hand_ranks)
+    hand_score = {tuple(hand):hand_rank(hand) for hand in hands}
+    if min(hand_score.values()) == 7:
+        print("I work")
+    return min(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
