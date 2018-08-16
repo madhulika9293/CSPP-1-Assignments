@@ -77,7 +77,8 @@ def hand_rank(hand):
     elif kind(hand, 2):
         return (rank, kind(hand, 2))
     else:
-        return (rank, hand_ranks)
+        rank = 0
+    return (rank, hand_ranks)
 
 def poker(hands):
     '''
