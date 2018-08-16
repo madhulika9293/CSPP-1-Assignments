@@ -8,7 +8,7 @@ import collections
 def crd_v(hand):
     '''calculates card values'''
     excep = [2, 3, 4, 5, 14]
-    crd_val = ['--23456789TJQKA'.index(c) for c, s in hand]
+    crd_val = sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse = True)
     if crd_val == excep:
         crd_val.remove(14)
         crd_val.add(1)
