@@ -4,7 +4,7 @@
 def word_list(inp1):
     inp1.lower()
     for char in inp1:
-        if not char.isalnum() or char in '.':
+        if (not char.isalnum()) or char in '.':
             char = ""
     inp1.strip()
     i_1 = inp1.split(" ")
