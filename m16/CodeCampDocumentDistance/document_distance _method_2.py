@@ -12,7 +12,7 @@ def clean(inp):
     regex = re.compile('[^a-z]') # cap means only
     inp = regex.sub('',inp)
     list_of_words = inp.split()
-    for word_index in enumerate(inp):
+    for word_index,_ in enumerate(inp):
         list_of_words[word_index] = list_of_words[word_index].strip()
     return list_of_words
 
@@ -48,7 +48,7 @@ def similarity(input1, input2):
     input2 = rem_stp_wrds(input2)
 
     dictionary = {}
-    dictionary = word_freq(input1, 0)
+    dictionary = word_freq(input1, 0, {})
     dictionary = word_freq(input2, 1, dictionary)
 
     return computation(dictionary)
