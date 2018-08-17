@@ -4,10 +4,10 @@
 def word_list(inp1):
     inp1.lower()
     for char in inp1:
-        if not char.isalnum() :
+        if not char.isalnuqm() :
             char = ""
-    i_1 = inp1.split(" ")
     i_1.strip()
+    i_1 = inp1.split(" ")
     return (i_1)
 
 def similarity(dict1, dict2):
