@@ -1,9 +1,14 @@
 '''
     Document Distance - A detailed description is given in the PDF
 '''
-def word_list(inp1, inp2):
-    inp1.lowercase()
-    inp2.lowercase()
+def word_list(inp1):
+    inp1.lower()
+    for char in inp1:
+        if not char.isalnum() :
+            char = ""
+    i_1 = inp1.split(" ")
+    i_1.strip()
+    return (i_1)
 
 def similarity(dict1, dict2):
     '''
@@ -27,7 +32,8 @@ def main():
     '''
     input1 = input()
     input2 = input()
-
+    print(word_list(input1))
+    print(word_list(input2))
     print(similarity(input1, input2))
 
 if __name__ == '__main__':
