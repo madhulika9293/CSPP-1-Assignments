@@ -23,7 +23,7 @@ def rem_stp_wrds(list_of_words):
             list_of_words.remove(word)
     return list_of_words
 
-def word_freq(list_of_words, index, dictionary = {})
+def word_freq(list_of_words, index, dictionary = {}):
     for word in list_of_words:
         if word != "" and word not in dictionary:
             dictionary[word] = [0, 0]
