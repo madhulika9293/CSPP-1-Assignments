@@ -13,7 +13,7 @@ def clean(inp):
 
 def word_freq(list_of_words, index, dictionary={}):
     '''
-    Words frequency
+    Words frequency calculator
     '''
     stop_words = load_stopwords('stopwords.txt')
     for word in list_of_words:
@@ -24,6 +24,9 @@ def word_freq(list_of_words, index, dictionary={}):
     return dictionary
 
 def computation(dictionary):
+    '''
+    necessary computation
+    '''
     num = sum(value[0]*value[1] for value in dictionary.values())
     den1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     den2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
