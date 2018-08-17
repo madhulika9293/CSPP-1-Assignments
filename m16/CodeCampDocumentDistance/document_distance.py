@@ -23,21 +23,21 @@ def word_dict(inp):
                 i_1[val] = 1
     return i_1
 
-def rem_stop_words(dict1):
-    '''
-        Removes stop words from the input
-    '''
-    for val in list(dict1):
-        if val in stop_words:
-            del dict1[val]
-    return dict1
+# def rem_stop_words(dict1):
+#     '''
+#         Removes stop words from the input
+#     '''
+#     for val in list(dict1):
+#         if val in stop_words:
+#             del dict1[val]
+#     return dict1
 
 def similarity(input1, input2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dict_inp1 = rem_stop_words(word_dict(input1))
-    dict_inp2 = rem_stop_words(word_dict(input2))
+    dict_inp1 = word_dict(input1)
+    dict_inp2 = word_dict(input2)
     # print(dict_inp1)
     # print(dict_inp2)
     # print(word_dict(input1))
