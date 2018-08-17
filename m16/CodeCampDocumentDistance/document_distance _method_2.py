@@ -4,7 +4,7 @@
 import re
 import math
 
-def word_dict(inp):
+def clean(inp):
     '''
         Make a words list and clean up the words
     '''
@@ -25,18 +25,33 @@ def rem_stp_wrds(list_of_words):
 
 def word_freq(list_of_words, index, dictionary = {})
     for word in list_of_words:
-        if word != "":
-            if word in dictionary:
-                dictionary[word] += 1
-            else:
-                dictionary[word] = 1
-    
+        if word != "" and word not in dictionary:
+            dictionary[word] = [0, 0]
+        dictionary[word][index] += 1
+    return dictionary
+
+def computation(dictionary):
+    num = sum(value[0]*value[1] for value in dictionary.values())
+    den1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
+    den2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
+    return num/(den1*den2)
+            
 
 def similarity(input1, input2):
     '''
         Compute the document distance as given in the PDF
     '''
-    
+    input1 = clean(input1) 
+    input2 = clean(input2)
+
+    input1 = rem_stp_wrds(input1) 
+    input2 = rem_stp_wrds(input2)
+
+    dictionary = {}
+    dictionary = word_freq(input1, 0)
+    dictionary = word_freq(input2, 1, dictionary)
+
+    return computation(dictionary)
 
 def load_stopwords(filename):
     '''
