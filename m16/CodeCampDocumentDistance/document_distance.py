@@ -45,6 +45,7 @@ def similarity(input1, input2):
     sim_den1 = math.sqrt(sum([com_dict[word][0]**2 for word in com_dict]))
     sim_den2 = math.sqrt(sum([com_dict[word][1]**2 for word in com_dict]))
 
+    print(com_dict)
     print(sim_num, sim_den1, sim_den2)
 
     cos_dist = sim_num/(sim_den1*sim_den2)
