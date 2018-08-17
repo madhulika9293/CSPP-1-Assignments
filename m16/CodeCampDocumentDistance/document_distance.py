@@ -32,7 +32,8 @@ def main():
     '''
     input1 = input()
     input2 = input()
-    print(load_stopwords(stopwords))
+    stop_file = stopwords.txt
+    print(load_stopwords(stop_file))
     print(similarity(input1, input2))
 
 if __name__ == '__main__':
