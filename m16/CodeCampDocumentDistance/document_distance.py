@@ -12,7 +12,6 @@ def word_dict(inp):
     regex = re.compile('[^a-z]') # cap means only
     input_words = [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
     i_1 = {}
-    # write condition for stop words
     for val in input_words:
         if val not in stop_words and val != "":
             if val in i_1:
@@ -44,12 +43,7 @@ def similarity(input1, input2):
     sim_den1 = math.sqrt(sum([com_dict[word][0]**2 for word in com_dict]))
     sim_den2 = math.sqrt(sum([com_dict[word][1]**2 for word in com_dict]))
 
-    # print(com_dict)
-    # print(sim_num, sim_den1, sim_den2)
-
-    cos_dist = sim_num/(sim_den1*sim_den2)
-
-    return cos_dist
+    return sim_num/(sim_den1*sim_den2)
 
 def load_stopwords(filename):
     '''

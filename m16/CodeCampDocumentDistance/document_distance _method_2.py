@@ -10,18 +10,6 @@ def clean(inp):
     '''
     regex = re.compile('[^a-z]') # cap means only
     return [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
-    # inp = regex.sub('',inp)
-    # list_of_words = inp.split()
-    # for word_index in range(len(list_of_words)):
-    #     list_of_words[word_index] = list_of_words[word_index].strip()
-    # return list_of_words
-
-# def rem_stp_wrds(list_of_words):
-#     stop_words = load_stopwords('stopwords.txt')
-#     for word in list_of_words:
-#         if word in stop_words:
-#             list_of_words.remove(word)
-#     return list_of_words
 
 def word_freq(list_of_words, index, dictionary = {}):
     stop_words = load_stopwords('stopwords.txt')
@@ -45,9 +33,6 @@ def similarity(input1, input2):
     '''
     input1 = clean(input1) 
     input2 = clean(input2)
-
-    # input1 = rem_stp_wrds(input1) 
-    # input2 = rem_stp_wrds(input2)
 
     dictionary = {}
     dictionary = word_freq(input1, 0, {})
