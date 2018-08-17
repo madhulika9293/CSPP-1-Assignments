@@ -7,7 +7,7 @@ def word_dict(inp1):
     '''
         Make a words list and clean up the words
     '''
-    inp1 = inp1.lower()
+    inp1.lower()
     for char in inp1:
         if char in '!~@#$%^&*.?':
             inp1 = inp1.replace(char, '')
