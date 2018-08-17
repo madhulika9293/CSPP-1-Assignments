@@ -11,7 +11,7 @@ def clean(inp):
     regex = re.compile('[^a-z]') # cap means only
     return [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
 
-def word_freq(list_of_words, index, dictionary={}):
+def word_freq(list_of_words, index, dictionary=None):
     '''
     Words frequency calculator
     '''
