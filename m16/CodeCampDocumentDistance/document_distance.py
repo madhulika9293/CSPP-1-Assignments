@@ -8,12 +8,10 @@ def word_dict(inp):
         Make a words list and clean up the words
     '''
     stop_words = load_stopwords('stopwords.txt')
-    inp.lower()
     for char in inp:
         if char in '!~@#$%^&*.?':
             inp = inp.replace(char, '')
-    inp = inp.strip().split(" ")
-    # inp = inp.split(" ")
+    inp = lower(inp.strip().split(" "))
     i_1 = {}
     for val in inp:
         if val not in stop_words:
