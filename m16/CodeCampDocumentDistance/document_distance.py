@@ -8,8 +8,9 @@ def word_dict(inp1):
         Make a words list and clean up the words
     '''
     inp1.lower()
+    print(inp1)
     for char in inp1:
-        if char in '!~@#$%^&*.':
+        if char in '!~@#$%^&*.?':
             inp1 = inp1.replace(char, '')
     inp1.strip()
     inp1 = inp1.split(" ")
@@ -40,7 +41,7 @@ def similarity(input1, input2):
     # print(dict_inp1)
     # print(dict_inp2)
     print(word_dict(input1))
-    
+
     com_dict = {}
     com_words = set(list(dict_inp1.keys()) + list(dict_inp2.keys()))
     # print(com_words)
