@@ -8,9 +8,9 @@ def word_dict(inp):
         Make a words list and clean up the words
     '''
     stop_words = load_stopwords('stopwords.txt')
-    inp = inp.lower()
+    inp.lower()
     for char in inp:
-        if char in '!~@#$%^&*.?':
+        if char in '!~@#$%^&*.3?':
             inp = inp.replace(char, '')
     inp = inp.strip().split(" ")
     i_1 = {}
@@ -45,8 +45,8 @@ def similarity(input1, input2):
     sim_den1 = math.sqrt(sum([com_dict[word][0]**2 for word in com_dict]))
     sim_den2 = math.sqrt(sum([com_dict[word][1]**2 for word in com_dict]))
 
-    print(com_dict)
-    print(sim_num, sim_den1, sim_den2)
+    # print(com_dict)
+    # print(sim_num, sim_den1, sim_den2)
 
     cos_dist = sim_num/(sim_den1*sim_den2)
 
