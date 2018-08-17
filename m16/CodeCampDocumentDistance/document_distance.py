@@ -6,7 +6,7 @@ def word_list(inp1):
     for char in inp1:
         if not char.isalnum() :
             char = ""
-    i_1.strip()
+    inp1.strip()
     i_1 = inp1.split(" ")
     return (i_1)
 
