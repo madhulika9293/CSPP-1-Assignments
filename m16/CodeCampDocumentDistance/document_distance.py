@@ -8,7 +8,7 @@ def word_dict(inp):
         Make a words list and clean up the words
     '''
     stop_words = load_stopwords('stopwords.txt')
-    inp.lower()
+    inp = inp.lower()
     for char in inp:
         if char in '!~@#$%^&*.3?':
             inp = inp.replace(char, '')
