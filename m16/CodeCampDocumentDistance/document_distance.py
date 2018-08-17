@@ -7,25 +7,26 @@ def word_dict(inp):
     '''
         Make a words list and clean up the words
     '''
+    stop_words = load_stopwords('stopwords.txt')
     inp.lower()
     for char in inp:
         if char in '!~@#$%^&*.?':
             inp = inp.replace(char, '')
-    inp.strip()
-    inp = inp.split(" ")
+    inp = inp.strip().split(" ")
+    # inp = inp.split(" ")
     i_1 = {}
     for val in inp:
-        if val in i_1:
-            i_1[val] += 1
-        else:
-            i_1[val] = 1
+        if val not in stop_words:
+            if val in i_1:
+                i_1[val] += 1
+            else:
+                i_1[val] = 1
     return i_1
 
 def rem_stop_words(dict1):
     '''
         Removes stop words from the input
     '''
-    stop_words = load_stopwords('stopwords.txt')
     for val in list(dict1):
         if val in stop_words:
             del dict1[val]
