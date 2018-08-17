@@ -30,7 +30,7 @@ def similarity(input1, input2):
     '''
         Compute the document distance as given in the PDF
     '''
-    input1 = clean(input1) 
+    input1 = clean(input1)
     input2 = clean(input2)
 
     dictionary = {}
