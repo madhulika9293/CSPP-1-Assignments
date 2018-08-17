@@ -9,10 +9,10 @@ def clean(inp):
         Make a words list and clean up the words
     '''
     inp = inp.lower()
-    regex = re.compile('[^a-z]') # cap means only
+    regex = re.compile('[^a-z_]') # cap means only
     inp = regex.sub('',inp)
     list_of_words = inp.split()
-    for word_index,_ in enumerate(inp):
+    for word_index in range(len(list_of_words)):
         list_of_words[word_index] = list_of_words[word_index].strip()
     return list_of_words
 
