@@ -9,25 +9,27 @@ def clean(inp):
         Make a words list and clean up the words
     '''
     regex = re.compile('[^a-z]') # cap means only
-    list_of_words = [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
+    return [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
     # inp = regex.sub('',inp)
     # list_of_words = inp.split()
     # for word_index in range(len(list_of_words)):
     #     list_of_words[word_index] = list_of_words[word_index].strip()
-    return list_of_words
+    # return list_of_words
 
-def rem_stp_wrds(list_of_words):
-    stop_words = load_stopwords('stopwords.txt')
-    for word in list_of_words:
-        if word in stop_words:
-            list_of_words.remove(word)
-    return list_of_words
+# def rem_stp_wrds(list_of_words):
+#     stop_words = load_stopwords('stopwords.txt')
+#     for word in list_of_words:
+#         if word in stop_words:
+#             list_of_words.remove(word)
+#     return list_of_words
 
 def word_freq(list_of_words, index, dictionary = {}):
+    stop_words = load_stopwords('stopwords.txt')
     for word in list_of_words:
-        if word != "" and word not in dictionary:
-            dictionary[word] = [0, 0]
-        dictionary[word][index] += 1
+        if word != "" and word not in stop_words:
+            if word not in dictionary:
+                dictionary[word] = [0, 0]
+            dictionary[word][index] += 1
     return dictionary
 
 def computation(dictionary):
@@ -44,8 +46,8 @@ def similarity(input1, input2):
     input1 = clean(input1) 
     input2 = clean(input2)
 
-    input1 = rem_stp_wrds(input1) 
-    input2 = rem_stp_wrds(input2)
+    # input1 = rem_stp_wrds(input1) 
+    # input2 = rem_stp_wrds(input2)
 
     dictionary = {}
     dictionary = word_freq(input1, 0, {})
