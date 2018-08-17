@@ -8,12 +8,12 @@ def clean(inp):
     '''
         Make a words list and clean up the words
     '''
-    inp = inp.lower()
-    regex = re.compile('[^a-z_ ]') # cap means only
-    inp = regex.sub('',inp)
-    list_of_words = inp.split()
-    for word_index in range(len(list_of_words)):
-        list_of_words[word_index] = list_of_words[word_index].strip()
+    regex = re.compile('[^a-z]') # cap means only
+    list_of_words = [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
+    # inp = regex.sub('',inp)
+    # list_of_words = inp.split()
+    # for word_index in range(len(list_of_words)):
+    #     list_of_words[word_index] = list_of_words[word_index].strip()
     return list_of_words
 
 def rem_stp_wrds(list_of_words):
