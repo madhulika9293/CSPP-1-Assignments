@@ -11,7 +11,7 @@ def word_dict(inp):
     for char in inp:
         if char in '!~@#$%^&*.?':
             inp = inp.replace(char, '')
-    inp = lower(inp.strip().split(" "))
+    inp = inp.strip().split(" ").lower()
     i_1 = {}
     for val in inp:
         if val not in stop_words:
