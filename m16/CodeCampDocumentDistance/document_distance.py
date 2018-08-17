@@ -14,6 +14,7 @@ def word_dict(inp):
             inp = inp.replace(char, '')
     inp = inp.strip().split(" ")
     i_1 = {}
+    # write condition for stop words
     for val in inp:
         if val not in stop_words:
             if val in i_1:
