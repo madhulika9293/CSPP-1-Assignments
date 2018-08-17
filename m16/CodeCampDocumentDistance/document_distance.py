@@ -16,7 +16,7 @@ def word_dict(inp):
     i_1 = {}
     # write condition for stop words
     for val in inp:
-        if val not in stop_words:
+        if val not in stop_words and val != "":
             if val in i_1:
                 i_1[val] += 1
             else:

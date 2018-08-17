@@ -24,8 +24,14 @@ def rem_stp_wrds(list_of_words):
     return list_of_words
 
 def word_freq(list_of_words, index, dictionary = {})
+    for word in list_of_words:
+        if word != "":
+            if word in dictionary:
+                dictionary[word] += 1
+            else:
+                dictionary[word] = 1
     
-    
+
 def similarity(input1, input2):
     '''
         Compute the document distance as given in the PDF
