@@ -1,12 +1,15 @@
 '''
     Document Distance - A detailed description is given in the PDF
 '''
+def word_list(inp1, inp2):
+    inp1.lowercase()
+    inp2.lowercase()
 
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    pass
+    
 
 def load_stopwords(filename):
     '''
