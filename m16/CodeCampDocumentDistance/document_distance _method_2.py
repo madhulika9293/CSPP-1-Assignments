@@ -69,7 +69,6 @@ def main():
     '''
     input1 = input()
     input2 = input()
-    print(word_dict(input1))
 
     print(similarity(input1, input2))
 
