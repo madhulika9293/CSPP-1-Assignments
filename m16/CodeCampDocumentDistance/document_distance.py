@@ -13,13 +13,13 @@ def word_dict(inp):
         if char in '!~@#$%^&*.?':
             inp = inp.replace(char, '')
     inp = inp.strip().split(" ")
-    i_1 = {}
-    for val in inp:
-        if val not in stop_words:
-            if val in i_1:
-                i_1[val] += 1
-            else:
-                i_1[val] = 1
+    i_1 = {if val not in stopwords:i_1(val) = inp.count(val) for val in inp}
+    # for val in inp:
+    #     if val not in stop_words:
+    #         if val in i_1:
+    #             i_1[val] += 1
+    #         else:
+    #             i_1[val] = 1
     return i_1
 
 # def rem_stop_words(dict1):
