@@ -12,6 +12,9 @@ def clean(inp):
     return [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
 
 def word_freq(list_of_words, index, dictionary={}):
+    '''
+    Words frequency
+    '''
     stop_words = load_stopwords('stopwords.txt')
     for word in list_of_words:
         if word != "" and word not in stop_words:
