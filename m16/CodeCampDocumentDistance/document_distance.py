@@ -12,8 +12,7 @@ def word_dict(inp):
     for char in inp:
         if char in '!~@#$%^&*.3?':
             inp = inp.replace(char, '')
-    inp = inp.strip()
-    print(inp.find("\n"))
+    inp = inp.strip().split(" ")
     i_1 = {}
     # write condition for stop words
     for val in inp:
