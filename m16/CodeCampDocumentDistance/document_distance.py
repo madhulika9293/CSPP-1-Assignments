@@ -2,20 +2,18 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
+import re
 
 def word_dict(inp):
     '''
         Make a words list and clean up the words
     '''
     stop_words = load_stopwords('stopwords.txt')
-    inp = inp.lower()
-    for char in inp:
-        if char in '!~@#$%^&*.3?':
-            inp = inp.replace(char, '')
-    inp = inp.strip().split(" ")
+    regex = re.compile('[^a-z]') # cap means only
+    input_words = [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
     i_1 = {}
     # write condition for stop words
-    for val in inp:
+    for val in input_words:
         if val not in stop_words and val != "":
             if val in i_1:
                 i_1[val] += 1
