@@ -4,7 +4,7 @@
 def word_list(inp1):
     inp1.lower()
     for char in inp1:
-        if char in '!~@#$%^&*.':
+        if char in '!'~@#$%^&*.':
             inp1 = inp1.replace(char, '')
     inp1.strip()
     i_1 = inp1.split(" ")
