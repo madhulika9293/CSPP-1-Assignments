@@ -38,7 +38,7 @@ def similarity(input1, input2):
     dict_inp1 = rem_stop_words(word_dict(input1))
     dict_inp2 = rem_stop_words(word_dict(input2))
     print(dict_inp1)
-    print(dict_inp2)
+    # print(dict_inp2)
 
     com_dict = {}
     com_words = set(list(dict_inp1.keys()) + list(dict_inp2.keys()))
