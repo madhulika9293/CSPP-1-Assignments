@@ -3,18 +3,18 @@
 '''
 import math
 
-def word_dict(inp1):
+def word_dict(inp):
     '''
         Make a words list and clean up the words
     '''
-    inp1.lower()
-    for char in inp1:
+    inp.lower()
+    for char in inp:
         if char in '!~@#$%^&*.?':
-            inp1 = inp1.replace(char, '')
-    inp1.strip()
-    inp1 = inp1.split(" ")
+            inp = inp.replace(char, '')
+    inp.strip()
+    inp = inp.split(" ")
     i_1 = {}
-    for val in inp1:
+    for val in inp:
         if val in i_1:
             i_1[val] += 1
         else:
