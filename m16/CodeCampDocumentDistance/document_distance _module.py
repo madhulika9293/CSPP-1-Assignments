@@ -12,6 +12,9 @@ def clean(inp):
     return [regex.sub('', word.strip()) for word in inp.lower().split(' ')]
 
 def word_freq(list_of_words, index, dictionary={}):
+    '''
+    Words frequency calculator
+    '''
     stop_words = load_stopwords('stopwords.txt')
     for word in list_of_words:
         if word != "" and word not in stop_words:
@@ -21,6 +24,9 @@ def word_freq(list_of_words, index, dictionary={}):
     return dictionary
 
 def computation(dictionary):
+    '''
+    necessary computation
+    '''
     num = sum(value[0]*value[1] for value in dictionary.values())
     den1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     den2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
@@ -44,8 +50,8 @@ def load_stopwords(filename):
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(filename, 'r') as file:
+        for line in file:
             stopwords[line.strip()] = 0
     return stopwords
 
