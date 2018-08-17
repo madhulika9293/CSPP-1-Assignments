@@ -25,7 +25,6 @@ def computation(dictionary):
     den1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     den2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
     return num/(den1*den2)
-            
 
 def similarity(input1, input2):
     '''
