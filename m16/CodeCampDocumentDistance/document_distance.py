@@ -4,8 +4,8 @@
 def word_list(inp1):
     inp1.lower()
     for char in inp1:
-        if char in "!~`@#$%^&*().":
-            inp1.replace(char, '')
+        if char in '!~@#$%^&*.':
+            inp1 = inp1.replace(char, '')
     inp1.strip()
     i_1 = inp1.split(" ")
     return (i_1)
@@ -33,7 +33,7 @@ def main():
     input1 = input()
     input2 = input()
     print(word_list(input1))
-    print(word_list(input2))
+    # print(word_list(input2))
     print(similarity(input1, input2))
 
 if __name__ == '__main__':
