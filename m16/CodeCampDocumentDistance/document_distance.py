@@ -60,7 +60,7 @@ def similarity(input1, input2):
 
     return cos_dist
 
-def load_stopwords(filename1):
+def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
     '''
