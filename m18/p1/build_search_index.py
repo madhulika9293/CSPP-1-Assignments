@@ -20,6 +20,7 @@
         .
     }
 '''
+import re
 
 # helper function to load the stop words from a file
 def load_stopwords(filename):
@@ -40,6 +41,7 @@ def word_list(text):
         return a list of words
     '''
     pass
+
 
 def build_search_index(docs):
     '''
@@ -82,7 +84,16 @@ def main():
     for i in range(lines):
         documents.append(input())
         i += 1
-    print(documents)
+    for i, j in enumerate(documents) :
+        print(i, j)
+        documents[i] = j.lower().split()
+        for char in j:
+            print(char)
+            if char >= 'a' and char <= 'z':
+                pass
+            else:
+                j = j.replace(char, '')
+    print(documents)    
 
     # call print to display the search index
     # print_search_index(build_search_index(documents))
