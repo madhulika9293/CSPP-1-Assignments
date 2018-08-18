@@ -80,7 +80,8 @@ def main():
             print(search_index[word])
             for i in search_index[word]:
                 print(i, i[0])
-                # list_of_id += i[0]
+                list_of_id = list_of_id.extend(i[0])
+    print(list_of_id)
 
     # call process queries
     # process_queries(search_index, queries)
