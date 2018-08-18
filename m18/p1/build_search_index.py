@@ -40,7 +40,13 @@ def word_list(text):
         Clean up the text by remvoing all the non alphabet characters
         return a list of words
     '''
-    pass
+    # print(text)
+    for i, j in enumerate(text):
+        for char in j:
+            if not (char.isalnum() or char == ' '):
+                text[i] = text[i].replace(char, '')
+    list_of_words = [doc.lower().split() for doc in text]
+    return list_of_words       
 
 
 def build_search_index(docs):
@@ -59,17 +65,24 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    pass
+    print(docs)
+    srch_indx = {}
+    stop_words = load_stopwords('stopwords.txt')
+    for i,j in enumerate(docs):
+        for word in j:
+            if word not in stop_words:
+                srch_indx[word] = [(i, j.count(word))]
+    return srch_indx
 
 # helper function to print the search index
 # use this to verify how the search index looks
-# def print_search_index(index):
-#     '''
-#         print the search index
-#     '''
-#     keys = sorted(index.keys())
-#     for key in keys:
-#         print(key, " - ", index[key])
+def print_search_index(index):
+    '''
+        print the search index
+    '''
+    keys = sorted(index.keys())
+    for key in keys:
+        print(key, " - ", index[key])
 
 # main function that loads the docs from files
 def main():
@@ -84,19 +97,11 @@ def main():
     for i in range(lines):
         documents.append(input())
         i += 1
-    for i, j in enumerate(documents) :
-        print(i, j)
-        documents[i] = j.lower().split()
-        for char in j:
-            print(char)
-            if char >= 'a' and char <= 'z':
-                pass
-            else:
-                j = j.replace(char, '')
-    print(documents)    
-
+    # print(word_list(documents))
+    # print(build_search_index(word_list(documents)))
+    
     # call print to display the search index
-    # print_search_index(build_search_index(documents))
+    print_search_index(build_search_index(documents))
 
 if __name__ == '__main__':
     main()
