@@ -68,7 +68,8 @@ def build_search_index(docs):
     # print(docs)
     srch_indx = {}
     stop_words = load_stopwords('stopwords.txt')
-    for i,j in enumerate(docs):
+    documents = word_list(docs)
+    for i,j in enumerate(documents):
         for word in j:
             if word not in stop_words:
                 srch_indx[word] = [(i, j.count(word))]
