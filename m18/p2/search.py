@@ -79,7 +79,7 @@ def main():
         if word in search_index:
             print(search_index[word])
             for i in search_index[word]:
-                print(i)
+                print(i, i[0])
                 # list_of_id += i[0]
 
     # call process queries
