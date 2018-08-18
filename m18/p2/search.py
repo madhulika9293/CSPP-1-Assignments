@@ -62,6 +62,7 @@ def main():
     for i in range(lines):
         queries.append(input())
         i += 1
+    print(search_index)
     print(queries)
     # call process queries
     process_queries(search_index, queries)
