@@ -1,1 +1,2 @@
 https://python-reference.readthedocs.io/en/latest/docs/str/replace.html
+https://www.google.co.in/search?q=unique+list+elements+python&oq=unique+of+list+ele&aqs=chrome.2.69i57j0l5.8052j1j4&sourceid=chrome&ie=UTF-8
