@@ -65,7 +65,7 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    print(docs)
+    # print(docs)
     srch_indx = {}
     stop_words = load_stopwords('stopwords.txt')
     for i,j in enumerate(docs):
