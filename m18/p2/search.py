@@ -43,7 +43,7 @@ def search(search_index, query):
         if word in search_index:
             for i in search_index[word]:
                 list_of_id += [i[0]]
-    return set(list_of_id)        
+    return set(list_of_id)
 
 
 def process_queries(search_index, queries):
@@ -65,7 +65,7 @@ def main():
 
     # read the number of search queries
     lines = int(input())
-    
+
     # read the search queries into a list
     queries = []
     for i in range(lines):
