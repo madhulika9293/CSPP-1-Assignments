@@ -41,9 +41,8 @@ def search(search_index, query):
     list_of_id = []
     for word in query:
         if word in search_index:
-            for _, j in search_index[word]:
-                print(_, j)
-                # list_of_id += j[0]
+            for i in search_index[word]:
+                list_of_id += i[0]
     return set(list_of_id)        
 
 
@@ -73,8 +72,18 @@ def main():
         queries.append(input())
         i += 1
 
+    query = queries[0].lower().split(' ')
+    list_of_id = []
+    for word in query:
+        print(word)
+        if word in search_index:
+            print(search_index[word])
+            for i in search_index[word]:
+                print(i)
+                list_of_id += i[0]
+
     # call process queries
-    process_queries(search_index, queries)
+    # process_queries(search_index, queries)
 
 if __name__ == '__main__':
     main()
