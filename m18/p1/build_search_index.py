@@ -20,7 +20,6 @@
         .
     }
 '''
-import re
 
 # helper function to load the stop words from a file
 def load_stopwords(filename):
@@ -47,7 +46,6 @@ def word_list(text):
                 text[i] = text[i].replace(char, '')
     list_of_words = [doc.lower().split() for doc in text]
     return list_of_words       
-
 
 def build_search_index(docs):
     '''
