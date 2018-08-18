@@ -45,7 +45,7 @@ def word_list(text):
             if not (char.isalnum() or char == ' '):
                 text[i] = text[i].replace(char, '')
     list_of_words = [doc.lower().split() for doc in text]
-    return list_of_words       
+    return list_of_words
 
 def build_search_index(docs):
     '''
@@ -67,7 +67,7 @@ def build_search_index(docs):
     srch_indx = {}
     stop_words = load_stopwords('stopwords.txt')
     documents = word_list(docs)
-    for i,j in enumerate(documents):
+    for i, j in enumerate(documents):
         for word in j:
             if (word not in stop_words) and (word not in srch_indx):
                 srch_indx[word] = [(i, j.count(word))]
@@ -100,7 +100,7 @@ def main():
         i += 1
     # print(word_list(documents))
     # print(build_search_index(word_list(documents)))
-    
+
     # call print to display the search index
     print_search_index(build_search_index(documents))
 
