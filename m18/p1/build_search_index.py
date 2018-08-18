@@ -73,6 +73,8 @@ def build_search_index(docs):
                 srch_indx[word] = [(i, j.count(word))]
             elif (word not in stop_words) and (word in srch_indx):
                 srch_indx[word] += [(i, j.count(word))]
+    for word in srch_indx:
+        srch_indx[word] = list(set(srch_indx[word]))
     return srch_indx
 
 # helper function to print the search index
