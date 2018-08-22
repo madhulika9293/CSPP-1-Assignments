@@ -86,6 +86,7 @@ class Message():
         '''
         return self.valid_words[:]
 
+    @classmethod
     def build_shift_dict(self, shift):
         '''
         Creates a dictionary that can be used to apply a cipher to a letter.
