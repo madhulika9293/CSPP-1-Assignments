@@ -228,7 +228,15 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        pass
+        Message.__init__(self, text)
+        # pass
+
+        def no_of_valid_words(self, decr_msg_txt):
+            valid_wrd_cnt = 0
+            for word in decr_msg_txt.split(" "):
+                if is_word(self.valid_words, word):
+                    valid_wrd_cnt += 1
+            return valid_wrd_cnt
 
     def decrypt_message(self):
         '''
@@ -246,7 +254,11 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        pass
+        # pass
+        decrypted_messages = []
+        for _ in range(27):
+            decrypted_messages.append(self.apply_shift(1))
+        return (decrypted_messages.index(max(decrypted_messages, key = self.no_of_valid_words)) + 1, max(decrypted_messages, key = self.no_of_valid_words))
 
 
 ### DO NOT MODIFY THIS METHOD ###
