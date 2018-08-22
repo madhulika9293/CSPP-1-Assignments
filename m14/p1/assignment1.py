@@ -87,7 +87,7 @@ class Message():
         return self.valid_words[:]
 
     @classmethod
-    def build_shift_dict(self, shift):
+    def build_shift_dict(cls, shift):
         '''
         Creates a dictionary that can be used to apply a cipher to a letter.
         The dictionary maps every uppercase and lowercase letter to a
