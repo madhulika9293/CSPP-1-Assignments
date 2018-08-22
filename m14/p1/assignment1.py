@@ -70,7 +70,7 @@ class Message(object):
     def __init__(self, text):
         '''
         Initializes a Message object
-                
+
         text (string): the message's text
 
         a Message object has two attributes:
@@ -84,7 +84,7 @@ class Message(object):
     def get_message_text(self):
         '''
         Used to safely access self.message_text outside of the class
-        
+
         Returns: self.message_text
         '''
         return self.message_text
@@ -93,24 +93,24 @@ class Message(object):
     def get_valid_words(self):
         '''
         Used to safely access a copy of self.valid_words outside of the class
-        
+
         Returns: a COPY of self.valid_words
         '''
         return self.valid_words[:]
-        
+
     def build_shift_dict(self, shift):
         '''
         Creates a dictionary that can be used to apply a cipher to a letter.
         The dictionary maps every uppercase and lowercase letter to a
         character shifted down the alphabet by the input shift. The dictionary
         should have 52 keys of all the uppercase letters and all the lowercase
-        letters only.        
-        
-        shift (integer): the amount by which to shift every letter of the 
+        letters only.
+
+        shift (integer): the amount by which to shift every letter of the
         alphabet. 0 <= shift < 26
 
-        Returns: a dictionary mapping a letter (string) to 
-                 another letter (string). 
+        Returns: a dictionary mapping a letter (string) to
+                 another letter (string).
         '''
         encod_dict = {}
         for char in range(97, 123, 1):
@@ -123,8 +123,8 @@ class Message(object):
         '''
         Applies the Caesar Cipher to self.message_text with the input shift.
         Creates a new string that is self.message_text shifted down the
-        alphabet by some number of characters determined by the input shift        
-        
+        alphabet by some number of characters determined by the input shift
+
         shift (integer): the shift with which to encrypt the message.
         0 <= shift < 26
 
@@ -145,8 +145,8 @@ class Message(object):
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
         '''
-        Initializes a PlaintextMessage object        
-        
+        Initializes a PlaintextMessage object
+
         text (string): the message's text
         shift (integer): the shift associated with this message
 
@@ -157,7 +157,7 @@ class PlaintextMessage(Message):
             self.encrypting_dict (dictionary, built using shift)
             self.message_text_encrypted (string, created using shift)
 
-        Hint: consider using the parent class constructor so less 
+        Hint: consider using the parent class constructor so less
         code is repeated
         '''
         # pass #delete this line and replace with your code here
@@ -170,7 +170,7 @@ class PlaintextMessage(Message):
     def get_shift(self):
         '''
         Used to safely access self.shift outside of the class
-        
+
         Returns: self.shift
         '''
         # pass #delete this line and replace with your code here
@@ -179,7 +179,7 @@ class PlaintextMessage(Message):
     def get_encrypting_dict(self):
         '''
         Used to safely access a copy self.encrypting_dict outside of the class
-        
+
         Returns: a COPY of self.encrypting_dict
         '''
         # pass #delete this line and replace with your code here
@@ -188,7 +188,7 @@ class PlaintextMessage(Message):
     def get_message_text_encrypted(self):
         '''
         Used to safely access self.message_text_encrypted outside of the class
-        
+
         Returns: self.message_text_encrypted
         '''
         # pass #delete this line and replace with your code here
@@ -196,10 +196,10 @@ class PlaintextMessage(Message):
 
     def change_shift(self, shift):
         '''
-        Changes self.shift of the PlaintextMessage and updates other 
-        attributes determined by shift (ie. self.encrypting_dict and 
+        Changes self.shift of the PlaintextMessage and updates other
+        attributes determined by shift (ie. self.encrypting_dict and
         message_text_encrypted).
-        
+
         shift (integer): the new shift that should be associated with this message.
         0 <= shift < 26
 
@@ -209,7 +209,7 @@ class PlaintextMessage(Message):
         self.shift = shift
         self.encrypting_dict = self.build_shift_dict(shift)
         self.message_text_encrypted = self.apply_shift(shift)
-        
+
 
 def main():
     '''
