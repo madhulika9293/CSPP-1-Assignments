@@ -40,7 +40,7 @@ def load_words(file_name):
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
+class Message():
     ''' Grader's Implementation of Message Object '''
 
     ### DO NOT MODIFY THIS METHOD ###
@@ -132,9 +132,12 @@ class Message(object):
 
 ### Paste your implementation of the `PlaintextMessage` class here
 class PlaintextMessage(Message):
+    '''
+    Implementation of plaintext message class
+    '''
     def __init__(self, text, shift):
         '''
-        Initializes a PlaintextMessage object        
+        Initializes a PlaintextMessage object
         '''
         # pass #delete this line and replace with your code here
         Message.__init__(self, text)
@@ -163,10 +166,10 @@ class PlaintextMessage(Message):
 
     def change_shift(self, shift):
         '''
-        Changes self.shift of the PlaintextMessage and updates other 
-        attributes determined by shift (ie. self.encrypting_dict and 
+        Changes self.shift of the PlaintextMessage and updates other
+        attributes determined by shift (ie. self.encrypting_dict and
         message_text_encrypted).
-        
+
         shift (integer): the new shift that should be associated with this message.
         0 <= shift < 26
 
