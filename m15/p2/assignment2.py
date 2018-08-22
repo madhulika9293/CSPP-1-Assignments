@@ -266,8 +266,8 @@ def decrypt_story():
     '''
     # pass #delete this line when you write your code.
     var = CiphertextMessage(get_story_string())
-    return var.decrypt_message
-    
+    return var.decrypt_message()
+
 ### DO NOT MODIFY THIS METHOD ###
 def main():
     ''' This method is provided to handle testcases'''
