@@ -231,12 +231,12 @@ class CiphertextMessage(Message):
         Message.__init__(self, text)
         # pass
 
-        def no_of_valid_words(self, decr_msg_txt):
-            valid_wrd_cnt = 0
-            for word in decr_msg_txt.split(" "):
-                if is_word(self.valid_words, word):
-                    valid_wrd_cnt += 1
-            return valid_wrd_cnt
+    def no_of_valid_words(self, decr_msg_txt):
+        valid_wrd_cnt = 0
+        for word in decr_msg_txt.split(" "):
+            if is_word(self.valid_words, word):
+                valid_wrd_cnt += 1
+        return valid_wrd_cnt
 
     def decrypt_message(self):
         '''
