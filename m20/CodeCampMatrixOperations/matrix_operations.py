@@ -12,10 +12,12 @@ def mult_matrix(m_1, m_2):
     if len(m_1[0]) != len(m_2):
         print("Error: Matrix shapes invalid for mult")
         return None
+
     rows_out = len(m_1)
     col_out = len(m_2[0])
     iter_out = len(m_2)
     mat_mult = [[] for i in range(rows_out)]
+
     for i in range(rows_out):
         for j in range(col_out):
             temp = 0
@@ -35,9 +37,11 @@ def add_matrix(m_1, m_2):
     if len(m_1) != len(m_2):
         print("Error: Matrix shapes invalid for addition")
         return None
+
     if len(m_1[0]) != len(m_2[0]):
         print("Error: Matrix shapes invalid for addition")
         return None
+
     mat_add = [[0 for j in range(len(m_1[0]))] for i in range(len(m_1))]
     for i, mat in enumerate(m_1):
         for j, _ in enumerate(mat):
