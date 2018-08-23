@@ -34,6 +34,7 @@ def add_matrix(m_1, m_2):
     '''
     if len(m_1) != len(m_2):
         print("Error: Matrix shapes invalid for addition")
+        return None
     elif len(m_1[0]) != len(m_2[0]):
         print("Error: Matrix shapes invalid for addition")
         return None
