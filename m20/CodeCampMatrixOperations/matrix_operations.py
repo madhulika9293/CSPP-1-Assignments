@@ -27,12 +27,12 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    mat_rows = int(input())
-    mat_columns = int(input())
+    mat_rows_columns = (int(input()), int(input())) 
+    # mat_columns = int(input())
     matrix = []
-    for i in range(mat_rows):
+    for i in range(mat_rows_columns[0]):
         matrix += [input()]
-        if len(matrix[i]) != mat_columns:
+        if len(matrix[i]) != mat_rows_columns[1]:
             print("Error: Invalid input for the matrix")
             return None
     return matrix
