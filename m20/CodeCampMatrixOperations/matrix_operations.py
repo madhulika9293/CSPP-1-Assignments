@@ -9,15 +9,17 @@ def mult_matrix(m1, m2):
     if len(m1[0]) != len(m2):
        print("Error: Matrix shapes invalid for mult")
        return None
-    mat_mult = [[] for i in range(len(m1))]
     rows_out = len(m1)
     col_out = len(m2[0])
     iter_out = len(m2)
+    mat_mult = [[] for i in range(rows_out)]
     for i in range(rows_out):
         for j in range(col_out):
+            temp = 0
             for k in range(iter_out):
-                mat_mult += int(m1[i][k])*int(m2[k][j])
-    return mat_mult 
+                temp += m1[i][k]*m2[k][j]
+            mat_mult[i] += [temp]
+    return mat_mult[:] 
 
 def add_matrix(m1, m2):
     '''
@@ -35,11 +37,10 @@ def add_matrix(m1, m2):
         return None
     else:
         mat_add = [[0 for j in range(len(m1[0]))] for i in range(len(m1))]
-        # print(mat_add)
         for i,mat in enumerate(m1):
             for j, _ in enumerate(mat):
                 mat_add[i][j] = int(m1[i][j]) + int(m2[i][j])
-    return mat_add 
+    return mat_add[:]
 
 def read_matrix(mat_inp):
     '''
@@ -52,7 +53,7 @@ def read_matrix(mat_inp):
     '''
     matrix = []
     for i in range(int(mat_inp[0])):
-        matrix.append(input().split(" "))
+        matrix += [[int(var) for var in input().split(" ")]]
         if len(matrix[i]) != int(mat_inp[1]):
             print("Error: Invalid input for the matrix")
             return None
@@ -69,8 +70,10 @@ def main():
 
     mat_inp_1 = input().split(",")
     mat_1 = read_matrix(mat_inp_1)
+
     mat_inp_2 = input().split(",")
     mat_2 = read_matrix(mat_inp_2)
+
     # print(mat_1) 
     # print(mat_2) 
     print(add_matrix(mat_1, mat_2))
