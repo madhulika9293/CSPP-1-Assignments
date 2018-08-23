@@ -62,6 +62,7 @@ def read_matrix(mat_inp):
     return matrix
 
 def main():
+    '''
     # read matrix 1
 
     # read matrix 2
@@ -69,6 +70,7 @@ def main():
     # add matrix 1 and matrix 2
 
     # multiply matrix 1 and matrix 2
+    '''
 
     mat_inp_1 = input().split(",")
     mat_1 = read_matrix(mat_inp_1)
@@ -76,7 +78,7 @@ def main():
     mat_inp_2 = input().split(",")
     mat_2 = read_matrix(mat_inp_2)
 
-    if mat_1 != None and mat_2 != None:
+    if mat_1 is not None and mat_2 is not None:
         print(add_matrix(mat_1, mat_2))
         print(mult_matrix(mat_1, mat_2))
 
