@@ -74,10 +74,9 @@ def main():
     mat_inp_2 = input().split(",")
     mat_2 = read_matrix(mat_inp_2)
 
-    # print(mat_1) 
-    # print(mat_2) 
-    print(add_matrix(mat_1, mat_2))
-    print(mult_matrix(mat_1, mat_2))
+    if mat_1 != None and mat_2 != None:
+        print(add_matrix(mat_1, mat_2))
+        print(mult_matrix(mat_1, mat_2))
 
 if __name__ == '__main__':
     main()
