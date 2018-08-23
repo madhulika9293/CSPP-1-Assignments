@@ -38,11 +38,10 @@ def add_matrix(m_1, m_2):
     if len(m_1[0]) != len(m_2[0]):
         print("Error: Matrix shapes invalid for addition")
         return None
-    else:
-        mat_add = [[0 for j in range(len(m_1[0]))] for i in range(len(m_1))]
-        for i, mat in enumerate(m_1):
-            for j, _ in enumerate(mat):
-                mat_add[i][j] = int(m_1[i][j]) + int(m_2[i][j])
+    mat_add = [[0 for j in range(len(m_1[0]))] for i in range(len(m_1))]
+    for i, mat in enumerate(m_1):
+        for j, _ in enumerate(mat):
+            mat_add[i][j] = int(m_1[i][j]) + int(m_2[i][j])
     return mat_add[:]
 
 def read_matrix(mat_inp):
