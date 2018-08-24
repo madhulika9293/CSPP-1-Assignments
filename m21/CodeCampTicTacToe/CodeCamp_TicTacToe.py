@@ -13,17 +13,14 @@ def is_validgame(game):
                 pass
             else:
                 return "invalid input"
-
     if abs(o_count - x_count) != 1:
         return "invalid game"
-
     return None
 
-def row_chk(game_inp):
+def row_chk(game):
     '''
     checks for winners in rows
     '''
-    game = is_validgame(game_inp)
     res = ''
     if set(game[0]) == {'o'} or set(game[1]) == {'o'} or set(game[2]) == {'o'}:
         res = 'o'
@@ -31,11 +28,10 @@ def row_chk(game_inp):
         res = 'x'
     return res
 
-def col_chk(game_inp):
+def col_chk(game):
     '''
     checks for winners in columns
     '''
-    game = is_validgame(game_inp)
     res = ''
     col1 = [game[_][0] for _ in range(3)]
     col2 = [game[_][1] for _ in range(3)]
@@ -45,11 +41,10 @@ def col_chk(game_inp):
     if set(col1) == {'x'} or set(col2) == {'x'} or set(col3) == {'x'}:
         res = 'x'
     
-def diag_chk(game_inp):
+def diag_chk(game):
     '''
     checks for winners diagonally
     '''
-    game = is_validgame(game_inp)
     res = ''
     diag1 = [game[_][_] for _ in range(3)]
     diag2 = [game[i][2-i] for i in range(3)]
@@ -85,7 +80,10 @@ def main():
     game_inp = []
     for _ in range(3):
         game_inp.append(input().split(" "))
-    return winner(game_inp)     
+    game = is_validgame(game_inp)
+    if game is not None:
+        return winner(game)
+    return game
 
 if __name__ == '__main__':
     main()
