@@ -5,33 +5,37 @@ def row_chk(game):
     '''
     checks for winners in rows
     '''
+    res = ''
     if set(game[0]) == {'o'} or set(game[1]) == {'o'} or set(game[2]) == {'o'}:
-        return 'o'
+        res = 'o'
     if set(game[0]) == {'x'} or set(game[1]) == {'x'} or set(game[2]) == {'x'}:
-        return 'x'
+        res = 'x'
+    return res
 
 def col_chk(game):
     '''
     checks for winners in columns
     '''
+    res = ''
     col1 = [game[_][0] for _ in range(3)]
     col2 = [game[_][1] for _ in range(3)]
     col3 = [game[_][2] for _ in range(3)]
     if set(col1) == {'o'} or set(col2) == {'o'} or set(col3) == {'o'}:
-        return 'o'
+        res = 'o'
     if set(col1) == {'x'} or set(col2) == {'x'} or set(col3) == {'x'}:
-        return 'x'
+        res = 'x'
     
 def diag_chk(game):
     '''
     checks for winners diagonally
     '''
+    res = ''
     diag1 = [game[_][_] for _ in range(3)]
     diag2 = [game[i][2-i] for i in range(3)]
     if set(diag1) == {'o'} or set(diag2) == {'o'}:
-        return 'o'
+        res = 'o'
     if set(diag1) == {'x'} or set(diag2) == {'x'}:
-        return 'x'
+        res = 'x'
 
 def winner(game):
     '''
