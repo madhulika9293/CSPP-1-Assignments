@@ -73,7 +73,8 @@ def winner(game):
     #     return 'o'
     # if winner1 is None and winner2 == 'x':
     #     return 'x'
-    return row_chk(game) or col_chk(game) or diag_chk(game) or 'draw'
+    return is_validgame(game) or row_chk(game) or col_chk(game) or\
+     diag_chk(game) or 'draw'
 
 def main():
     '''
@@ -82,10 +83,9 @@ def main():
     game_inp = []
     for _ in range(3):
         game_inp.append(input().split(" "))
-    game = is_validgame(game_inp)
-    if game is not None:
-        return winner(game)
-    return game
-
+    # if game is not None:
+    #     return winner(game)
+    # return game
+    winner(game_inp)
 if __name__ == '__main__':
     main()
