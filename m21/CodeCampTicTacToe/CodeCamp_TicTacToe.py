@@ -65,7 +65,8 @@ def main():
         game_inp.append(input().split(" "))
         if game_inp[_][0] not in 'xo.' or game_inp[_][1] not in 'xo.' or game_inp[_][2] not in 'xo.':
             return "invalid input"
-    return winner(game_inp)     
+    print(game_inp)
+    # return winner(game_inp)     
 
 if __name__ == '__main__':
     main()
