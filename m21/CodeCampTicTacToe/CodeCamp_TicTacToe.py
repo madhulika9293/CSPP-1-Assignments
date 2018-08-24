@@ -38,7 +38,6 @@ def winner(game):
     Takes the game input. Consists of 3 entries - 'o' for one player,
     'x' for another player and '.' to denote an empty space on the board.
     '''
-    winner = ''
     if row_chk(game) == 'o' or col_chk(game) == 'o' or diag_chk(game) == 'o':
         winner1 = 'o'
     else:
