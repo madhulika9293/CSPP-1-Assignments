@@ -40,7 +40,8 @@ def col_chk(game):
         res = 'o'
     if set(col1) == {'x'} or set(col2) == {'x'} or set(col3) == {'x'}:
         res = 'x'
-    
+    return res
+
 def diag_chk(game):
     '''
     checks for winners diagonally
@@ -83,9 +84,7 @@ def main():
     game_inp = []
     for _ in range(3):
         game_inp.append(input().split(" "))
-    # if game is not None:
-    #     return winner(game)
-    # return game
-    winner(game_inp)
+    print(winner(game_inp))
+
 if __name__ == '__main__':
     main()
