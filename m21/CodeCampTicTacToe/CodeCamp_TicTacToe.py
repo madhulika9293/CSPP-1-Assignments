@@ -60,20 +60,6 @@ def winner(game):
     Takes the game input. Consists of 3 entries - 'o' for one player,
     'x' for another player and '.' to denote an empty space on the board.
     '''
-    # if row_chk(game) == 'o' or col_chk(game) == 'o' or diag_chk(game) == 'o':
-    #     winner1 = 'o'
-    # else:
-    #     winner1 = None
-    # if row_chk(game) == 'x' or col_chk(game) == 'x' or diag_chk(game) == 'x':
-    #     winner2 = 'x'
-    # else:
-    #     winner2 = None
-    # if winner1 == 'o' and winner2 == 'x':
-    #     return "invalid game"
-    # if winner1 == 'o' and winner2 is None:
-    #     return 'o'
-    # if winner1 is None and winner2 == 'x':
-    #     return 'x'
     return is_validgame(game) or row_chk(game) or col_chk(game) or\
      diag_chk(game) or 'draw'
 
