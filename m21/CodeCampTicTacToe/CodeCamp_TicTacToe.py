@@ -52,6 +52,7 @@ def diag_chk(game):
         res = 'o'
     if set(diag1) == {'x'} or set(diag2) == {'x'}:
         res = 'x'
+    return res
 
 def winner(game):
     '''
@@ -73,6 +74,7 @@ def winner(game):
     # if winner1 is None and winner2 == 'x':
     #     return 'x'
     return row_chk(game) or col_chk(game) or diag_chk(game) or 'draw'
+
 def main():
     '''
     Reads inputs and decides the winner
