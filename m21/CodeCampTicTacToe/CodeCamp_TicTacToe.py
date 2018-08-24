@@ -63,8 +63,9 @@ def main():
     game_inp = []
     for _ in range(3):
         game_inp.append(input().split(" "))
+        res = 'invalid input'
         if game_inp[_][0] not in 'xo.' or game_inp[_][1] not in 'xo.' or game_inp[_][2] not in 'xo.':
-            return "invalid input"
+            return res 
     print(game_inp)
     # return winner(game_inp)     
 
