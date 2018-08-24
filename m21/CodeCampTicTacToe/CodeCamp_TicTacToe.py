@@ -1,6 +1,18 @@
 '''
 Tic-Tac-Toe game evaluator - takes the played game and decides a winning player
 '''
+def is_validgame(game):
+    x_count, o_count = 0, 0
+    for each_row in game:
+        for each_box in each_row:
+            if each_box == 'x':
+                x_count += 1
+            elif each_box == 'o':
+                o_count += 1
+            elif each_box == '.':
+                pass
+            else:
+                return "invalid input"
 def row_chk(game):
     '''
     checks for winners in rows
@@ -42,20 +54,21 @@ def winner(game):
     Takes the game input. Consists of 3 entries - 'o' for one player,
     'x' for another player and '.' to denote an empty space on the board.
     '''
-    if row_chk(game) == 'o' or col_chk(game) == 'o' or diag_chk(game) == 'o':
-        winner1 = 'o'
-    else:
-        winner1 = None
-    if row_chk(game) == 'x' or col_chk(game) == 'x' or diag_chk(game) == 'x':
-        winner2 = 'x'
-    else:
-        winner2 = None
-    if winner1 == 'o' and winner2 == 'x':
-        return "invalid game"
-    if winner1 == 'o' and winner2 is None:
-        return 'o'
-    if winner1 is None and winner2 == 'x':
-        return 'x'
+    # if row_chk(game) == 'o' or col_chk(game) == 'o' or diag_chk(game) == 'o':
+    #     winner1 = 'o'
+    # else:
+    #     winner1 = None
+    # if row_chk(game) == 'x' or col_chk(game) == 'x' or diag_chk(game) == 'x':
+    #     winner2 = 'x'
+    # else:
+    #     winner2 = None
+    # if winner1 == 'o' and winner2 == 'x':
+    #     return "invalid game"
+    # if winner1 == 'o' and winner2 is None:
+    #     return 'o'
+    # if winner1 is None and winner2 == 'x':
+    #     return 'x'
+    return row_chk(game) or col_chk(game) or diag_chk(game) or 'draw'
 def main():
     '''
     Reads inputs and decides the winner
@@ -63,11 +76,7 @@ def main():
     game_inp = []
     for _ in range(3):
         game_inp.append(input().split(" "))
-        res = 'invalid input'
-        if game_inp[_][0] not in 'xo.' or game_inp[_][1] not in 'xo.' or game_inp[_][2] not in 'xo.':
-            return res 
-    print(game_inp)
-    # return winner(game_inp)     
+    return winner(game_inp)     
 
 if __name__ == '__main__':
     main()
