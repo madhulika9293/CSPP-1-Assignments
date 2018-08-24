@@ -27,7 +27,7 @@ def diag_chk(game):
     checks for winners diagonally
     '''
     diag1 = [game[_][_] for _ in range(3)]
-    diag2 = [game[i][eval(2-i)] for i in range(3)]
+    diag2 = [game[i][2-i] for i in range(3)]
     if set(diag1) == {'o'} or set(diag2) == {'o'}:
         return 'o'
     if set(diag1) == {'x'} or set(diag2) == {'x'}:
