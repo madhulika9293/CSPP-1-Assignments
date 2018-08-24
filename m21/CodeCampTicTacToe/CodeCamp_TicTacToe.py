@@ -2,6 +2,9 @@
 Tic-Tac-Toe game evaluator - takes the played game and decides a winning player
 '''
 def is_validgame(game):
+    '''
+    Function to clean input data
+    '''
     x_count, o_count = 0, 0
     for each_row in game:
         for each_box in each_row:
