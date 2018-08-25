@@ -27,8 +27,7 @@ def check_sudoku(sudoku):
         for each_entry in each_row:
             if each_entry not in '0123456789':
                 return False
-            else:
-                return row_check(sudoku)
+            return row_check(sudoku)
     # return sudok
 
 def main():
