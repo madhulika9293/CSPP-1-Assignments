@@ -5,7 +5,9 @@ alphabets in both upper and lower case and numbers.
 import re
 
 def clean_string(string):
-    
+    '''
+	function to clean the input
+    '''
     regex = re.compile("[^a-zA-Z0-9]")
     return regex.sub('', string)
 
