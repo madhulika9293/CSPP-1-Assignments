@@ -5,7 +5,7 @@ the key and frequency with a SPACE - SPACE.
 '''
 
 def print_dictionary(dictionary):
-    dict_list = [[] for _ in dictionary]
+    dict_list = []
     for i, each_key in enumerate(dictionary):
         print(i, each_key)
         # dict_list[i][0] = each_key
