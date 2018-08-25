@@ -8,7 +8,7 @@ def print_dictionary(dictionary):
     dict_list = []
     for each_key in dictionary:
         dict_list.append([each_key, dictionary[each_key]])
-    dict_list.sorted()
+    dict_list = sorted(dict_list)
     print(dict_list)
 
 def main():
