@@ -40,8 +40,18 @@ def grid_check(sudoku):
     '''
     Checks the 3x3 grids in sudoku
     '''
-    for i in range(3,10,3):
-        print(i)
+    g_0 = ''.join(sorted([sudoku[i][j] for i in range(0,3) for j in range(0,3)]))
+    g_1 = ''.join(sorted([sudoku[i][j] for i in range(0,3) for j in range(3,6)]))
+    g_2 = ''.join(sorted([sudoku[i][j] for i in range(0,3) for j in range(6,9)]))
+    g_3 = ''.join(sorted([sudoku[i][j] for i in range(3,6) for j in range(0,3)]))
+    g_4 = ''.join(sorted([sudoku[i][j] for i in range(3,6) for j in range(3,6)]))
+    g_5 = ''.join(sorted([sudoku[i][j] for i in range(3,6) for j in range(6,9)]))
+    g_6 = ''.join(sorted([sudoku[i][j] for i in range(6,9) for j in range(0,3)]))
+    g_7 = ''.join(sorted([sudoku[i][j] for i in range(6,9) for j in range(3,6)]))
+    g_8 = ''.join(sorted([sudoku[i][j] for i in range(6,9) for j in range(6,9)]))
+    return g_0 in STR_CHK and g_1 in STR_CHK and g_2 in STR_CHK and\
+    g_3 in STR_CHK and g_4 in STR_CHK and g_5 in STR_CHK and\
+    g_6 in STR_CHK and g_7 in STR_CHK and g_8 in STR_CHK
 
 def check_sudoku(sudoku):
     '''
@@ -49,7 +59,7 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     # print(row_check(sudoku), col_check(sudoku))
-    return row_check(sudoku) and col_check(sudoku)
+    return row_check(sudoku) and col_check(sudoku) and grid_check(sudoku)
 
 def main():
     '''
