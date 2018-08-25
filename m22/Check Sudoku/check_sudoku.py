@@ -70,7 +70,7 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
+
     # initialize empty list
     sudoku = []
 
@@ -80,7 +80,6 @@ def main():
         row = input().split(' ')
         sudoku.append(row)
     # call solution function and print result to console
-    sudoku_int = [int(ele) for row in sudoku for ele in row]
     print(check_sudoku(sudoku))
     # print(row_check(sudoku))
     # print(col_check(sudoku))
