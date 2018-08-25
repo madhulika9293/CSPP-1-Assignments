@@ -10,7 +10,7 @@ def print_dictionary(dictionary):
         print(i, each_key)
         # dict_list[i][0] = each_key
         # dict_list[i][1] = dictionary[each_key]
-    return dict_list
+    return 'a'
 
 def main():
     dictionary = eval(input())
