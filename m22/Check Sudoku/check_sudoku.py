@@ -82,9 +82,9 @@ def main():
     # call solution function and print result to console
     sudoku_int = [int(ele) for row in sudoku for ele in row]
     print(check_sudoku(sudoku))
-    print(row_check(sudoku))
-    print(col_check(sudoku))
-    print(grid_check(sudoku))
+    # print(row_check(sudoku))
+    # print(col_check(sudoku))
+    # print(grid_check(sudoku))
 
 if __name__ == '__main__':
     main()
