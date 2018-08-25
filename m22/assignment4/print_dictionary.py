@@ -9,7 +9,9 @@ def print_dictionary(dictionary):
     for each_key in dictionary:
         dict_list.append([each_key, dictionary[each_key]])
     dict_list = sorted(dict_list)
-    print(dict_list)
+    for each_ele in dict_list:
+        print(each_ele[0], " - ", each_ele[1])
+    # print(dict_list)
 
 def main():
     dictionary = eval(input())
