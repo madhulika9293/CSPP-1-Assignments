@@ -5,6 +5,9 @@ each word
 import re
 
 def tokenize(string):
+    '''
+    Function to clean and tokenize the given string
+    '''
     freq_dict = {}
     regex = re.compile("[^a-zA-Z0-9 ]")
     string_mod = regex.sub('', string)
@@ -13,9 +16,12 @@ def tokenize(string):
         if each_word not in freq_dict:
             freq_dict[each_word] = lst_inp.count(each_word)
     return freq_dict
-    
-            
+
+
 def main():
+    '''
+    This is the main function
+    '''
     num_lines = int(input())
     string_inp = ''
     for _ in range(num_lines):
