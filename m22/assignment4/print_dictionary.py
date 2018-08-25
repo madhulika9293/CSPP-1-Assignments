@@ -7,7 +7,7 @@ the key and frequency with a SPACE - SPACE.
 def print_dictionary(dictionary):
     dict_list = []
     for each_key in dictionary:
-        dict_list += [each_key, dictionary[each_key]]
+        dict_list.append([each_key, dictionary[each_key]])
     print(dict_list)
 
 def main():
