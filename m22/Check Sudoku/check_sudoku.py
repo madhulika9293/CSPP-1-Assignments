@@ -14,7 +14,6 @@ def row_check(sudoku):
     Checks the sudoku rules in each row
     '''
     for each_row in sudoku:
-        # print(each_row)
         temp_row = ''.join(sorted(each_row))
         if temp_row != STR_CHK:
             return False
@@ -33,6 +32,7 @@ def col_check(sudoku):
     col7 = ''.join(sorted([sudoku[_][6] for _ in range(9)]))
     col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
     col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
+    
     return col1 in STR_CHK and col2 in STR_CHK and col3 in STR_CHK and\
     col4 in STR_CHK and col5 in STR_CHK and col6 in STR_CHK and\
     col7 in STR_CHK and col8 in STR_CHK and col9 in STR_CHK
@@ -50,6 +50,7 @@ def grid_check(sudoku):
     g_6 = ''.join(sorted([sudoku[i][j] for i in range(6, 9) for j in range(0, 3)]))
     g_7 = ''.join(sorted([sudoku[i][j] for i in range(6, 9) for j in range(3, 6)]))
     g_8 = ''.join(sorted([sudoku[i][j] for i in range(6, 9) for j in range(6, 9)]))
+    
     return g_0 in STR_CHK and g_1 in STR_CHK and g_2 in STR_CHK and\
     g_3 in STR_CHK and g_4 in STR_CHK and g_5 in STR_CHK and\
     g_6 in STR_CHK and g_7 in STR_CHK and g_8 in STR_CHK
@@ -59,10 +60,6 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    # print(row_check(sudoku), col_check(sudoku))
-    # sudoku_int = [int(ele) for row in sudoku for ele in row]
-    # print(sudoku_int)
-    # sum_sud = sum(sudoku_int) sum_sud != 405 and
     return row_check(sudoku) and col_check(sudoku)\
     and grid_check(sudoku)
 
@@ -82,9 +79,6 @@ def main():
         sudoku.append(row)
     # call solution function and print result to console
     print(check_sudoku(sudoku))
-    # print(row_check(sudoku))
-    # print(col_check(sudoku))
-    # print(grid_check(sudoku))
 
 if __name__ == '__main__':
     main()
