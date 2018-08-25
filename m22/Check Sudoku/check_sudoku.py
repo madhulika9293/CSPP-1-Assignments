@@ -17,6 +17,24 @@ def row_check(sudoku):
             return False
         return True
 
+def col_check(sudoku):
+    '''
+    Checks the sudoku rules in each row
+    '''
+    col1 = ''.join(sorted([sudoku[_][0] for _ in range(9)]))
+    col2 = ''.join(sorted([sudoku[_][1] for _ in range(9)]))
+    col3 = ''.join(sorted([sudoku[_][2] for _ in range(9)]))
+    col4 = ''.join(sorted([sudoku[_][3] for _ in range(9)]))
+    col5 = ''.join(sorted([sudoku[_][4] for _ in range(9)]))
+    col6 = ''.join(sorted([sudoku[_][5] for _ in range(9)]))
+    col7 = ''.join(sorted([sudoku[_][6] for _ in range(9)]))
+    col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
+    col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
+    str_chk = '0123456789'
+    return col1 in str_chk and col2 in str_chk and col3 in str_chk and\
+    col4 in str_chk and col5 in str_chk and col6 in str_chk and\
+    col7 in str_chk and col8 in str_chk and col8 in str_chk
+
 
 def check_sudoku(sudoku):
     '''
