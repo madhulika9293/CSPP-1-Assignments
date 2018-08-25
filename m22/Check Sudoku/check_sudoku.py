@@ -14,9 +14,11 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     for each_row in sudoku:
+        print(each_row)
         for each_entry in sudoku:
-            if each_entry not in '0123456789':
-                return False
+            print(each_entry)
+            # if each_entry not in '0123456789':
+                # return False
     return sudoku
 
 def main():
