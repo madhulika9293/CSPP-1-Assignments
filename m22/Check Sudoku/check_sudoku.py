@@ -16,7 +16,7 @@ def row_check(sudoku):
     for each_row in sudoku:
         # print(each_row)
         temp_row = ''.join(sorted(each_row))
-        if temp_row != '123456789':
+        if temp_row != STR_CHK:
             return False
     return True
 
