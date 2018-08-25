@@ -31,9 +31,9 @@ def col_check(sudoku):
     col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
     col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
     str_chk = '0123456789'
-    return col1 in str_chk and col2 in str_chk and col3 in str_chk and\
+    return (col1 in str_chk and col2 in str_chk and col3 in str_chk and\
     col4 in str_chk and col5 in str_chk and col6 in str_chk and\
-    col7 in str_chk and col8 in str_chk and col8 in str_chk
+    col7 in str_chk and col8 in str_chk and col8 in str_chk)
 
 
 def check_sudoku(sudoku):
