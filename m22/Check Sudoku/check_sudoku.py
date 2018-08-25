@@ -32,9 +32,9 @@ def col_check(sudoku):
     col7 = ''.join(sorted([sudoku[_][6] for _ in range(9)]))
     col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
     col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
-    return (col1 in STR_CHK and col2 in STR_CHK and col3 in STR_CHK and\
+    return col1 in STR_CHK and col2 in STR_CHK and col3 in STR_CHK and\
     col4 in STR_CHK and col5 in STR_CHK and col6 in STR_CHK and\
-    col7 in STR_CHK and col8 in STR_CHK and col8 in STR_CHK)
+    col7 in STR_CHK and col8 in STR_CHK and col9 in STR_CHK
 
 def grid_check(sudoku):
     pass
