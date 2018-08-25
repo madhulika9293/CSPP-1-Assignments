@@ -5,7 +5,7 @@ each word
 
 def tokenize(string):
     freq_dict = {}
-    lst_inp = string.split(" ")
+    lst_inp = string.split(" ")[:-1]
     for each_word in lst_inp:
     	if each_word not in freq_dict:
     		freq_dict[each_word] = lst_inp.count(each_word)
