@@ -7,13 +7,15 @@
     Complete the check_sudoku function to check if the given grid
     satisfies all the sudoku rules given in the statement above.
 '''
+STR_CHK = '123456789'
+
 def row_check(sudoku):
     '''
     Checks the sudoku rules in each row
     '''
     for each_row in sudoku:
         temp_row = ''.join(sorted(each_row))
-        if temp_row != '123456789':
+        if temp_row != STR_CHK:
             return False
         return True
 
@@ -30,11 +32,12 @@ def col_check(sudoku):
     col7 = ''.join(sorted([sudoku[_][6] for _ in range(9)]))
     col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
     col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
-    str_chk = '123456789'
-    return (col1 in str_chk and col2 in str_chk and col3 in str_chk and\
-    col4 in str_chk and col5 in str_chk and col6 in str_chk and\
-    col7 in str_chk and col8 in str_chk and col8 in str_chk)
+    return (col1 in STR_CHK and col2 in STR_CHK and col3 in STR_CHK and\
+    col4 in STR_CHK and col5 in STR_CHK and col6 in STR_CHK and\
+    col7 in STR_CHK and col8 in STR_CHK and col8 in STR_CHK)
 
+def grid_check(sudoku):
+    pass
 
 def check_sudoku(sudoku):
     '''
