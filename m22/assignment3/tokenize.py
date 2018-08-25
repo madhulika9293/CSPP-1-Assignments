@@ -10,8 +10,8 @@ def tokenize(string):
     string_mod = regex.sub('', string)
     lst_inp = string_mod.split(" ")[:-1]
     for each_word in lst_inp:
-    	if each_word not in freq_dict:
-    		freq_dict[each_word] = lst_inp.count(each_word)
+        if each_word not in freq_dict:
+            freq_dict[each_word] = lst_inp.count(each_word)
     return freq_dict
     
             
@@ -19,8 +19,8 @@ def main():
     num_lines = int(input())
     string_inp = ''
     for _ in range(num_lines):
-    	string_inp += input()
-    	string_inp += " "
+        string_inp += input()
+        string_inp += " "
     print(tokenize(string_inp))
 
 if __name__ == '__main__':
