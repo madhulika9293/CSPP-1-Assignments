@@ -7,6 +7,16 @@
     Complete the check_sudoku function to check if the given grid
     satisfies all the sudoku rules given in the statement above.
 '''
+def row_check(sudoku):
+    '''
+    Checks the sudoku rules in each row
+    '''
+    for each_row in sudoku:
+        temp_row = ''.join(sorted(each_row))
+        if temp_row != '0123456789':
+            return False
+        return True
+
 
 def check_sudoku(sudoku):
     '''
@@ -14,12 +24,12 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     for each_row in sudoku:
-        # print(each_row)
         for each_entry in each_row:
-            # print(each_entry)
             if each_entry not in '0123456789':
                 return False
-    return sudoku
+            else:
+                return row_check(sudoku)
+    # return sudok
 
 def main():
     '''
