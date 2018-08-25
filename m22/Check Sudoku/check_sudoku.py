@@ -59,7 +59,11 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     # print(row_check(sudoku), col_check(sudoku))
-    return row_check(sudoku) and col_check(sudoku) and grid_check(sudoku)
+    sudoku_int = [int(ele) for row in sudoku for ele in row]
+    # print(sudoku_int)
+    sum_sud = sum(sudoku_int)
+    return sum_sud != 405 and row_check(sudoku) and col_check(sudoku)\
+    and grid_check(sudoku)
 
 def main():
     '''
@@ -76,7 +80,11 @@ def main():
         row = input().split(' ')
         sudoku.append(row)
     # call solution function and print result to console
+    sudoku_int = [int(ele) for row in sudoku for ele in row]
     print(check_sudoku(sudoku))
+    print(row_check(sudoku))
+    print(col_check(sudoku))
+    print(grid_check(sudoku))
 
 if __name__ == '__main__':
     main()
