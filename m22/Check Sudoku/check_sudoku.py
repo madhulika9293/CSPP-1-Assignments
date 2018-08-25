@@ -15,7 +15,7 @@ def row_check(sudoku):
     '''
     for each_row in sudoku:
         temp_row = ''.join(sorted(each_row))
-        if temp_row != STR_CHK:
+        if temp_row != '123456789':
             return False
         return True
 
@@ -59,10 +59,10 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     # print(row_check(sudoku), col_check(sudoku))
-    sudoku_int = [int(ele) for row in sudoku for ele in row]
+    # sudoku_int = [int(ele) for row in sudoku for ele in row]
     # print(sudoku_int)
-    sum_sud = sum(sudoku_int)
-    return sum_sud != 405 and row_check(sudoku) and col_check(sudoku)\
+    # sum_sud = sum(sudoku_int) sum_sud != 405 and
+    return row_check(sudoku) and col_check(sudoku)\
     and grid_check(sudoku)
 
 def main():
