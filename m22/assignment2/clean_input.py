@@ -6,15 +6,15 @@ import re
 
 def clean_string(string):
     '''
-	function to clean the input
+    function to clean the input
     '''
     regex = re.compile("[^a-zA-Z0-9]")
     return regex.sub('', string)
 
 def main():
-	'''
-	This is the main function
-	'''
+    '''
+    This is the main function
+    '''
     string = input()
     print(clean_string(string))
 
