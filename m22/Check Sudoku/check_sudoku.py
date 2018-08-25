@@ -14,10 +14,11 @@ def row_check(sudoku):
     Checks the sudoku rules in each row
     '''
     for each_row in sudoku:
+        # print(each_row)
         temp_row = ''.join(sorted(each_row))
         if temp_row != '123456789':
             return False
-        return True
+    return True
 
 def col_check(sudoku):
     '''
