@@ -13,7 +13,7 @@ def row_check(sudoku):
     '''
     for each_row in sudoku:
         temp_row = ''.join(sorted(each_row))
-        if temp_row != '0123456789':
+        if temp_row != '123456789':
             return False
         return True
 
@@ -30,7 +30,7 @@ def col_check(sudoku):
     col7 = ''.join(sorted([sudoku[_][6] for _ in range(9)]))
     col8 = ''.join(sorted([sudoku[_][7] for _ in range(9)]))
     col9 = ''.join(sorted([sudoku[_][8] for _ in range(9)]))
-    str_chk = '0123456789'
+    str_chk = '123456789'
     return (col1 in str_chk and col2 in str_chk and col3 in str_chk and\
     col4 in str_chk and col5 in str_chk and col6 in str_chk and\
     col7 in str_chk and col8 in str_chk and col8 in str_chk)
@@ -41,12 +41,8 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    for each_row in sudoku:
-        for each_entry in each_row:
-            if each_entry not in '0123456789':
-                return False
-            return row_check(sudoku) and col_check(sudoku)
-    # return sudok
+    # print(row_check(sudoku), col_check(sudoku))
+    return row_check(sudoku) and col_check(sudoku)
 
 def main():
     '''
