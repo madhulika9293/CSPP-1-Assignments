@@ -37,7 +37,11 @@ def col_check(sudoku):
     col7 in STR_CHK and col8 in STR_CHK and col9 in STR_CHK
 
 def grid_check(sudoku):
-    pass
+    '''
+    Checks the 3x3 grids in sudoku
+    '''
+    for i in range(3,10,3):
+        print(i)
 
 def check_sudoku(sudoku):
     '''
@@ -63,6 +67,7 @@ def main():
         sudoku.append(row)
     # call solution function and print result to console
     print(check_sudoku(sudoku))
+    print(grid_check(sudoku))
 
 if __name__ == '__main__':
     main()
