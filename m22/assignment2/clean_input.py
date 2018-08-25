@@ -12,6 +12,7 @@ def clean_string(string):
     return regex.sub('', string)
 
 def main():
+	''' This is the main function'''
     string = input()
     print(clean_string(string))
 
